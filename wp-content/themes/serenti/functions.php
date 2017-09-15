@@ -50,6 +50,7 @@ function serenti_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
+		'top-menu' => __( 'Top Menu' ),
 		'primary' => esc_html__( 'Primary Menu', 'serenti' ),
 	) );
 
@@ -86,6 +87,18 @@ function serenti_setup() {
 		'width'       => 500,
 		'flex-height' => true,
 	) );
+
+
+	//* Add support for custom flexible header
+	/*add_theme_support( 'custom-header', array(
+		'flex-width'    => true,
+		'width'           => 260,
+		'flex-height'    => true,
+		'height'          => 100,
+		'header-selector' => '.site-title a',
+		'header-text'     => false
+	 
+	) );*/
 
 }
 endif; // serenti_setup
@@ -381,12 +394,12 @@ function serenti_footer_credits() {
 	?>
 	<div class="site-info">
 	<?php if ($serenti_footer_text == '') { ?>
-	&copy; <?php echo date_i18n( __( 'Y', 'serenti' ) ); ?> <?php bloginfo( 'name' ); ?><?php esc_html_e('. All rights reserved.', 'serenti'); ?>
+	&copy; <?php echo date_i18n( __( 'Y', 'serenti' ) ); ?> <?php bloginfo( 'name' ); ?><?php esc_html_e(',  Palma Settimi, Inc. All rights reserved.', 'serenti'); ?>
 	<?php } else { echo esc_html( $serenti_footer_text ); } ?>
 	</div><!-- .site-info -->
 
 	<?php
-	printf( esc_html__( 'Theme by %1$s Powered by %2$s', 'serenti' ) , '<a href="https://moozthemes.com/" target="_blank">MOOZ Themes</a>', '<a href="http://wordpress.org/" target="_blank">WordPress</a>');
+	printf( esc_html__( 'theme by %1$s Powered by %2$s', 'serenti' ) , '<a href="https://3ringprototype.com" target="_blank">Three Ring Design</a>, modified from theme originally created by <a href="https://moozthemes.com/" target="_blank">MOOZ Themes</a>', '<a href="http://wordpress.org/" target="_blank">WordPress</a>');
 }
 add_action( 'serenti_footer', 'serenti_footer_credits' );
 

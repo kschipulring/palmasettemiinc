@@ -12,9 +12,34 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<?php wp_head(); ?>
+		<script src="https://use.fontawesome.com/22c47afbf3.js"></script>
 	</head>
 	<body <?php body_class(); ?>>
 
+		<!--<nav class="navbar top right" role="navigation">
+			<?php //wp_nav_menu( array( 'theme_location' => "top-menu" ) ); ?>
+		</nav>-->
+
+		<!-- Navigation -->
+		<nav class="navbar" role="navigation">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display --> 
+				<div class="navbar-header"> 
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> 
+						<span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'serenti' ); ?></span> 
+						<span class="icon-bar"></span> 
+						<span class="icon-bar"></span> 
+						<span class="icon-bar"></span> 
+					</button> 
+				</div>
+				<?php wp_nav_menu( array( 'theme_location' => "top-menu" ) ); ?>
+
+				<?php serenti_header_menu(); // main navigation ?>
+			</div>
+		</nav>
+		<!-- End: Navigation -->
+
+		<!--
 		<div class="container">
 			<header class="header" id="header">
 				<div class="container">
@@ -22,23 +47,7 @@
 				</div>
 			</header>
 		</div>
-
-		<!-- Navigation -->
-		<nav class="navbar" role="navigation">
-			<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display --> 
-			<div class="navbar-header"> 
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> 
-					<span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'serenti' ); ?></span> 
-					<span class="icon-bar"></span> 
-					<span class="icon-bar"></span> 
-					<span class="icon-bar"></span> 
-				</button> 
-			</div> 
-			<?php serenti_header_menu(); // main navigation ?>
-			</div>
-		</nav>
-		<!-- End: Navigation -->
+		-->
 
 				<?php
 					global $post;

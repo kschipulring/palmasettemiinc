@@ -29,7 +29,11 @@
 			</div>
 
 			<div class="footer-wide">
-					<?php get_sidebar( 'footer-wide' ); ?>
+				<a href="https://www.linkedin.com/company/8087726/"><i class="fa fa-facebook fa-3x" aria-hidden="true"></i></a>
+
+				<a href="https://www.linkedin.com/company/8087726/"><i class="fa fa-linkedin fa-3x" aria-hidden="true"></i></a>
+
+				<?php get_sidebar( 'footer-wide' ); ?>
 			</div>
 
 			<div class="footer-bottom">
