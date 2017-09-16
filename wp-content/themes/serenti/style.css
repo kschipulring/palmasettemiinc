@@ -1866,6 +1866,10 @@ object {
 	margin-right: 3.6%;
 }
 
+.front-page-thumb.f5{
+	margin-left: 23%;
+}
+
 .front-page-thumb p{
 	display:none;
 }
@@ -1888,4 +1892,10 @@ object {
 	text-align: left;
 
 	line-height: 1.2em;
+}
+
+.front-page-thumb a:hover h3{
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(32,64,40,0.75) 80%, rgba(1,64,65,0.9) 100%);
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(32,64,40,0.75) 80%, rgba(1,64,65,0.9) 100%);
+	background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(32,64,40,0.75) 80%, rgba(1,64,65,0.9) 100%);
 }
