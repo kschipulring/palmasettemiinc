@@ -170,6 +170,17 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
 
         protected $processes = array();
 
+
+		public function __construct(){
+			add_action( 'rest_api_init', function () {
+				register_rest_route( 'ninjaforms', '/forms/([0-9]+)', array(
+					'methods' => 'GET',
+					'callback' => array(NF_Display_Render, "restlocalize"),
+				) );
+			});
+		}
+
+
         /**
          * Main Ninja_Forms Instance
          *

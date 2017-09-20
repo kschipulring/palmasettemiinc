@@ -36,7 +36,7 @@ final class NF_Display_Render
     protected static $form_uses_helptext       = array();
     protected static $form_uses_starrating     = array();
 
-    public static function localize( $form_id )
+    public static function localize_abstract( $form_id )
     {
         global $wp_locale;
         $form_id = absint( $form_id );
@@ -80,7 +80,7 @@ final class NF_Display_Render
         $form->update_settings( $settings );
 
         if( $form->get_setting( 'logged_in' ) && ! is_user_logged_in() ){
-            echo do_shortcode( $form->get_setting( 'not_logged_in_msg' ));
+            //echo do_shortcode( $form->get_setting( 'not_logged_in_msg' ));
             return;
         }
 
@@ -326,10 +326,19 @@ final class NF_Display_Render
 
         $fields = apply_filters( 'ninja_forms_display_fields', $fields );
 
+        return array($fields, $form, $form_fields);
+    }   
+
+    public static function localize( $form_id )
+    {
+        
+        list($fields, $form, $form_fields) = self::localize_abstract($form_id);
+
         // Output Form Container
         do_action( 'ninja_forms_before_container', $form_id, $form->get_settings(), $form_fields );
         Ninja_Forms::template( 'display-form-container.html.php', compact( 'form_id' ) );
-        
+
+
         $form_id = "$form_id";
 
         ?>
@@ -338,6 +347,37 @@ final class NF_Display_Render
         <?php
         self::enqueue_scripts( $form_id );
     }
+
+
+	public static function restlocalize_final( $form_id ){
+    		list($fields, $form) = self::localize_abstract($form_id);
+
+    		$json_obj = array( "fields" => $fields, "form_settings" => $form->get_settings() );
+
+    		return $json_obj;
+
+    		//return wp_json_encode( $json_obj );
+    		//return json_encode( $json_obj, JSON_UNESCAPED_SLASHES );
+
+    		//return "clowns defecate for fun with " . $form_id;
+	}
+
+	function restlocalize($data){
+		$data_arr = (array)$data;
+		$data_params = array();
+
+		foreach($data_arr as $key=>$val){
+			if( strstr($key, "params") ){
+				$data_params = $val;
+
+				break;
+			}
+		}
+
+		$form_id = $data_params["URL"][1];
+
+		return self::restlocalize_final( $form_id );
+	}
 
     public static function localize_preview( $form_id )
     {
