@@ -16,10 +16,6 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-		<!--<nav class="navbar top right" role="navigation">
-			<?php //wp_nav_menu( array( 'theme_location' => "top-menu" ) ); ?>
-		</nav>-->
-
 		<!-- Navigation -->
 		<nav class="navbar" role="navigation">
 			<div class="container">
@@ -29,11 +25,14 @@
 						<span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'serenti' ); ?></span> 
 						<span class="icon-bar"></span> 
 						<span class="icon-bar"></span> 
-						<span class="icon-bar"></span> 
+						<span class="icon-bar"></span>
 					</button> 
 				</div>
-				<?php wp_nav_menu( array( 'theme_location' => "top-menu" ) ); ?>
+				<!--<nav class="navbar top right" role="navigation">-->
+					<?php wp_nav_menu( array( 'theme_location' => "top-menu" ) ); ?>
+				<!--</nav>-->
 
+				
 				<?php serenti_header_menu(); // main navigation ?>
 			</div>
 		</nav>
@@ -49,16 +48,16 @@
 		</div>
 		-->
 
-				<?php
-					global $post;
-					if( is_singular() && get_post_meta($post->ID, 'site_layout', true) ){
-						$layout_class = get_post_meta($post->ID, 'site_layout', true);
-					}
-					else{
-						$layout_class = get_theme_mod( 'serenti_sidebar_position' );
-					}
-					if ((isset($layout_class)) && ($layout_class == '')) $layout_class = "mz-sidebar-right";
-				?>
+			<?php
+				global $post;
+				if( is_singular() && get_post_meta($post->ID, 'site_layout', true) ){
+					$layout_class = get_post_meta($post->ID, 'site_layout', true);
+				}
+				else{
+					$layout_class = get_theme_mod( 'serenti_sidebar_position' );
+				}
+				if ((isset($layout_class)) && ($layout_class == '')) $layout_class = "mz-sidebar-right";
+			?>
 
 			<!-- BEGIN .container -->
 			<div class="container <?php echo esc_attr($layout_class); ?>">
