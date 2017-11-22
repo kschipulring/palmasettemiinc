@@ -1,0 +1,265 @@
+/*--------------------------------------------------------------
+ Posts
+ --------------------------------------------------------------*/
+#content {
+  /*margin-top: 60px;*/
+  margin-top: 0px;
+}
+.single article, .page article {
+  /*border-bottom: 1px dotted #d2d2d2;*/
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+.author article {
+  /*border-bottom: 1px dotted #d2d2d2;*/
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+/* Masonary style */
+@media (min-width: 768px) {
+  .article-container {
+    overflow: hidden;
+  }
+  .blog.home article.post {
+    width: 50%;
+    margin: 0;
+    padding-right: 0px;
+    display: inline-block;
+    float: left;
+  }
+  .blog.home article.post .read-more, .blog.home article.post .entry-footer {
+    /*        display: none; */
+  }
+  .blog.home article.post .post-inner-content {
+    border: 0;
+    margin-bottom: 50px;
+  }
+  .blog.home .page-1 article.post:first-child, .blog.home .page-1 article.post:nth-child(2) {
+    width: 100%;
+    padding: 0;
+  }
+  .blog.home .page-1 article.post:first-child .post-inner-content, .blog.home .page-1 article.post:nth-child(2) .post-inner-content {
+    padding: 0 0 50px;
+    margin-bottom: 30px;
+  }
+  .blog.home .page-1 article.post:first-child .read-more, .blog.home .page-1 article.post:nth-child(2) .read-more, .blog.home .page-1 article.post:first-child .entry-footer, .blog.home .page-1 article.post:nth-child(2) .entry-footer {
+    display: block;
+  }
+  .blog.home article.post:nth-child(odd) {
+    clear: left;
+    padding-right: 25px;
+  }
+  .blog.home article.post:nth-child(even) {
+    padding-left: 25px;
+  }
+}
+.post-header {
+  text-align: center;
+  margin: 0px 0;
+  padding: 0px;
+}
+.post-title {
+  font-size: 19px;
+}
+.cat-links {
+  /*font-family: 'Dancing Script', sans-serif;*/
+  font-family: 'AvenirLTStd-Heavy', sans-serif;
+}
+.read-more {
+  text-align: center;
+}
+.read-more a {
+  border-bottom: 2px solid #d0c5c1;
+  border-top: 1px solid #d0c5c1;
+  padding: 5px 10px 4px 10px;
+}
+/*--------------------------------------------------------------
+ Posts
+ --------------------------------------------------------------*/
+.post.sticky {
+  padding: 30px 30px !important;
+  background-color: #f9f9f9;
+}
+.post.sticky .post-inner-content {
+  padding: 0px !important;
+}
+.post .post-image {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.post-header {
+  /*font-family: 'Dancing Script', sans-serif;*/
+}
+.post-header .cat {
+  font-family: 'AvenirLTStd-Heavy', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+.post-header .date {
+  font-size: 12px;
+  letter-spacing: 0px;
+  color: #c5c5cd;
+}
+.post-header .date a {
+  font-size: 12px;
+  letter-spacing: 0px;
+  color: #c5c5cd;
+}
+.post-header h1 {
+  color: #141414;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  font-size: 54px;
+  margin: 10px 0 10px;
+  color: #02be5f;
+  text-align: left;
+}
+.post-header h2 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+.post-header h1 a, .post-header h2 a {
+  color: #141414;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+}
+.post.sticky .post-header h1 a, .post.sticky .post-header h2 a {
+  font-weight: 600;
+  color: #37373b;
+}
+.post-header h1 a:hover, .post-header h2 a:hover {
+  color: #23527c;
+}
+.post-edit-link {
+  margin-left: 10px;
+  color: #cb0000;
+}
+.home .post-entry p, .ot-widget-about-author .author-post p {
+  font-size: 15px;
+}
+.post-entry {
+  /*	margin-bottom: 30px; */
+}
+.post-entry ul, .post-entry ol, .post-entry li {
+  margin: 5px 20px;
+}
+.post-meta {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  margin: 30px 0 0 0;
+  overflow: auto;
+}
+.post-meta .meta-info {
+  color: #b9b9b9;
+  float: right;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.post-meta .meta-info a {
+  color: #b9b9b9;
+  -o-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -webkit-transition: 0.2s;
+}
+.post-meta .meta-info span {
+  color: #1a1a1a;
+}
+.post-meta .meta-info a:hover {
+  border-bottom: 1px solid;
+  border-color: #d0c5c1;
+  padding-bottom: 4px;
+}
+.post-meta .entry-tags i, .post-meta .entry-tags a {
+  margin-right: 10px;
+}
+.read-more {
+  text-align: center;
+  display: block;
+}
+.read-more a {
+  font-family: "open sans", sans-serif;
+  border: 1px solid #e6e6ea;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  padding: 12px 28px !important;
+  display: inline-block;
+  margin-top: 10px;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  border-radius: 50px !important;
+  line-height: 100%;
+}
+.ot-widget-about-author .author-post .read-more a, .null-instagram-feed p a {
+  font-family: "open sans", sans-serif;
+  border: 1px solid #e6e6ea;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  padding: 12px 28px !important;
+  display: inline-block;
+  margin-top: 10px;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  border-radius: 50px !important;
+  line-height: 100%;
+}
+.read-more a:hover {
+  color: #fff;
+  border: 1px solid;
+  background-color: #d0c5c1;
+  border-color: #d0c5c1;
+}
+.post-share {
+  float: left;
+  font-size: 12px;
+}
+.post-share li {
+  display: inline-block;
+  margin-right: 30px;
+}
+.post-share .socials a {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #bdbbbb;
+  font-size: 11px;
+  -o-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -webkit-transition: 0.2s;
+}
+.post-share .socials a i {
+  margin-right: 1px;
+  color: #5a5a5e;
+  font-size: 18px;
+}
+.post-share a:hover {
+  border-bottom: 1px solid;
+  border-color: #d0c5c1;
+  padding-bottom: 4px;
+}
+/* mobile version */
+@media (max-width: 768px) {
+  .post-meta .meta-info {
+    display: none;
+  }
+  .post-share li {
+    margin-right: 10px;
+  }
+  .post-share .socials a {
+    font-size: 9px;
+  }
+  .post-share .socials a i {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,427 @@
+/*
+Theme Name: Serenti
+Theme URI: http://www.moozthemes.com/serenti-wordpress-theme
+Author: MOOZ Themes
+Author URI: http://www.moozthemes.com
+Description: Serenti is a clean & elegant blog theme, designed for fashion, travel, personal or lifestyle bloggers in mind. Aiming to reduce distracting clutter, we’ve trimmed away many elements and lovingly crafted an elegant theme ideal for creative bloggers of any field. Featuring both sidebar & full-width layouts, a variety of post layout options, and numerous sidebar & footer widgets, Serenti WordPress theme showcasing your content in an airy and beautiful way. Enjoy writing, enjoy blogging!
+Version: 1.0.5
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl.html
+Text Domain: serenti
+Domain Path: /languages/
+Tags: blog, entertainment, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, custom-logo, featured-images, full-width-template, theme-options, threaded-comments, footer-widgets
+*/
+
+/*------------------------------------------------------------------
+[Color codes]
+hover color:	#d0c5c1 (coffe latte color)
+-------------------------------------------------------------------*/
+
+
+@import "_functions-mixins";
+@import "_variables";
+
+@include font-face('AvenirLTStd-Heavy', 'AvenirLTStd-Heavy');
+@include font-face('AvenirLTStd-Book', 'AvenirLTStd-Book');
+@include font-face('AvenirLTStd-Medium', 'AvenirLTStd-Medium');
+@include font-face('AvenirLTStd-Light', 'AvenirLTStd-Light');
+
+@include font-face('proxima_nova_altblack', 'Mark Simonson - Proxima Nova Alt Black-webfont');
+@include font-face('proxima_nova_altbold', 'Mark Simonson - Proxima Nova Alt Bold-webfont');
+@include font-face('Proxima Nova', 'Mark Simonson - Proxima Nova Alt Regular-webfont');
+
+@include font-face('proxima_nova_scosfthin', 'Mark Simonson - Proxima Nova ScOsf Thin-webfont');
+@include font-face('proxima_nova_ltsemibold', 'Mark Simonson - Proxima Nova Semibold-webfont');
+@include font-face('proxima_nova_ltthin', 'Mark Simonson - Proxima Nova Thin-webfont');
+
+@include font-face('loraregular', 'lora-regular-webfont');
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+html{
+	font-size: 100%;
+}
+
+body{
+	font-size: 15px;
+}
+
+body, p {
+	font-family: $font-primary;
+	-webkit-font-smoothing: antialiased;
+}
+
+body x{
+	background: #fff;
+}
+
+*, :after, :before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+p {
+	font-weight: 400;
+	letter-spacing: 0px;
+	font-size: 17px;
+	color: #131313;
+	line-height: 161%;
+	-webkit-font-smoothing: antialiased;
+	margin-bottom: 25px;
+}
+
+* > p {
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+a {
+  outline: 0;
+  text-decoration: none;
+  color: #141415;
+  &:hover, &:focus, &:active, &.active {
+    outline: 0;
+    text-decoration: none;
+    color: #23527c;
+  }
+}
+
+#{headings(1,6)} {
+  font-family: $font-heading-link, sans-serif;
+  font-weight: 300;
+  line-height: 1.2em;
+  /*font-style: italic;*/
+  letter-spacing: .06em;
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+  color: #222;
+}
+
+.sidebar {
+  #{headings(1,6)} {
+    font-style: italic;
+    font-style: normal;
+    font-weight: 400;
+  }
+}
+
+.mz-footer {
+  #{headings(1,6)} {
+    font-style: italic;
+    font-style: normal;
+    font-weight: 400;
+  }
+}
+
+/** layout options **/
+
+@media (min-width: 993px) {
+  .mz-sidebar-left {
+    float: right !important;
+  }
+  .mz-sidebar-right .sidebar {
+    margin-left: 30px;
+  }
+  .container.mz-sidebar-right {
+    padding-left: 50px;
+  }
+}
+
+.mz-full-width {
+  width: 100%;
+}
+
+.no-sidebar {
+  float: none;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+/* Print Style Sheet */
+@media print {
+  body {
+    background: white;
+    color: black;
+    margin: 0;
+  }
+  #header {
+    margin: 20px 0;
+  }
+  #content {
+    margin: 0px;
+    padding: 0px;
+  }
+  #comments {}
+  #sidebar, #footer {
+    display: none;
+  }
+  #back-top {
+    visibility: hidden;
+  }
+}
+
+
+@import "menus";
+
+@import "forms";
+
+@import "posts";
+
+@import "comments";
+
+@import "widgets";
+
+/*--------------------------------------------------------------
+	Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  &:hover, &:active, &:focus {
+    background-color: #f1f1f1;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+
+	@include border-radius( 3px );
+
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar */
+  }
+}
+
+/*--------------------------------------------------------------
+	Alignments
+--------------------------------------------------------------*/
+
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+	Media
+--------------------------------------------------------------*/
+
+.page-content img.wp-smiley, .entry-content img.wp-smiley, .comment-content img.wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers */
+
+embed, iframe, object {
+  max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+	Captions
+--------------------------------------------------------------*/
+
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+  img[class*="wp-image-"] {
+    display: block;
+    margin: 0 auto;
+  }
+  .wp-caption-text {
+    margin: 0.8075em 0;
+  }
+}
+
+.wp-caption-text {
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+	Error box
+--------------------------------------------------------------*/
+
+.error-box {
+  margin: 30px 0;
+  h1 {
+    margin: 30px 0;
+  }
+}
+
+
+@import "galleries";
+@import "footer";
+
+
+
+
+.col-md-4 {
+  display: none;
+}
+
+.col-md-8 {
+  width: 100%;
+}
+
+#front-page-thumbs {
+  /*min-width: 75vw;*/
+}
+
+.front-page-thumb {
+  /*width: 28%;*/
+  width: calc(33% - 30px);
+  height: 17vw;
+  float: left;
+  margin-bottom: 30px;
+  margin-right: 30px;
+  overflow: hidden;
+  a {
+	@include linear-gradient(top, rgba(116, 96, 116, 0) 0%, rgba(60, 97, 92, 0.225) 80%, rgba(62, 64, 93, 0.225) 100%);
+
+	height: inherit;
+	display: block;
+	color: #FFF;
+	position: relative;
+	z-index: 2;
+	/*padding-left: 1.5vw;*/
+	text-align:center;
+	width: 100%;
+	top: -98%;
+	font-size: 1.1em;
+	padding-top: 7vw;
+	text-transform: uppercase;
+	text-shadow: 0px 0px 3px rgba(0, 48, 96, 0.35), 0px 2px 15px rgba(0, 48, 96, 0.75);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	font-family: $font-heading-link;
+  }
+  &.f4 a, &.f5 a {
+    top: 0%;
+    font-size: 3em;
+    line-height: 0em;
+    text-align: center;
+  }
+  a:hover {
+	@include linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(32, 64, 40, 0.375) 80%, rgba(1, 64, 65, 0.45) 100%);
+  }
+  img {
+    /*width:inherit;*/
+    width: auto;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    max-width: initial;
+    min-width: 100%;
+  }
+  &.f4, &.f5 {
+    width: calc(100% - 40px);
+    overflow: hidden;
+  }
+  &.f4 img, &.f5 img {
+    width: 100%;
+    height: auto;
+    top: -17vw;
+  }
+  > br {
+    display: none;
+  }
+}
+
+@include for-tablet-portrait-up {
+  #front-page-thumbs {
+    width: 708px;
+  }
+  .front-page-thumb {
+    /*width: 216px;*/
+    height: 203px;
+    a {
+      padding-top: 68px;
+      font-size: 1.4em;
+    }
+    &.f4 a, &.f5 a {
+      /*top: -200%;*/
+      font-size: 5em;
+    }
+    &.f4 img, &.f5 img {
+      top: -26vw;
+    }
+  }
+}
+
+@include for-tablet-landscape-up {
+  #front-page-thumbs {
+    /*width: 918px;*/
+    width: 110%;
+  }
+  .front-page-thumb {
+    /*width: 276px;*/
+    height: 272px;
+    a {
+      padding-top: 100px;
+      font-size: 1.3em;
+    }
+  }
+}
+
+@include for-big-desktop-up {
+  #front-page-thumbs {
+    max-width: 1234px;
+  }
+  .front-page-thumb {
+    &.f1, &.f2, &.f3 {
+      /*width: 550px;*/
+      /*width: 363px;*/
+      height: 377px;
+    }
+    a {
+      padding-top: 140px;
+      font-size: 1.8em;
+      line-height: 1.2em;
+    }
+  }
+}

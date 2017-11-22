@@ -1,0 +1,211 @@
+/*--------------------------------------------------------------
+ Main menu
+ --------------------------------------------------------------*/
+.navbar {
+  font-family: 'AvenirLTStd-Medium', sans-serif;
+  margin-bottom: 10px;
+}
+.navbar .container {
+  display: table;
+}
+.navbar-nav {
+  width: 100%;
+}
+.navbar .navbar-nav > li > a {
+  color: #212123;
+  font-weight: 400;
+  font-size: 1.4em;
+  letter-spacing: 1px;
+  /*font-family: 'Karla', sans-serif;*/
+  font-family: 'AvenirLTStd-Medium', sans-serif;
+  padding-top: 55px;
+  padding-bottom: 20px;
+  /*padding: 10px 15px 0px 15px;*/
+}
+.navbar-toggle {
+  padding: 17px 17px;
+  margin-top: -1px;
+  margin-right: -1px;
+  margin-bottom: -1px;
+  background-color: #d0c5c1;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 0px;
+}
+.navbar-toggle .icon-bar {
+  border-radius: 1px;
+  background-color: #fff;
+}
+.navbar .navbar-center {
+  text-align: center;
+}
+.navbar .navbar-center .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+.nav > li > a:focus, .nav > li > a:hover {
+  color: #fff;
+  background-color: rgba(119, 95, 117, 0.5);
+}
+.menu-top-menu-container {
+  float: right;
+}
+.menu-top-menu-container #menu-top-menu {
+  list-style: none;
+}
+.menu-top-menu-container #menu-top-menu > li {
+  display: inline-block;
+  padding: 1em 0em;
+}
+.menu-top-menu-container #menu-top-menu > li a {
+  color: #999;
+  padding: 10px;
+  text-transform: uppercase;
+  font-family: 'Proxima Nova';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+}
+#menu-main-menu > li a {
+  color: #999;
+  padding: 10px;
+  text-transform: uppercase;
+  font-family: 'Proxima Nova';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+}
+.menu-top-menu-container #menu-top-menu > li a:hover, #menu-main-menu > li a:hover {
+  /*color: #380033;*/
+  color: white;
+  background-color: rgba(119, 95, 117, 0.5);
+}
+.menu-top-menu-container #menu-top-menu > li ul.sub-menu {
+  display: none;
+  position: absolute;
+  list-style: none;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  margin-left: -10px;
+}
+.menu-top-menu-container #menu-top-menu > li ul.sub-menu li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.menu-top-menu-container #menu-top-menu > li:hover ul.sub-menu {
+  display: block;
+}
+@media (min-width: 768px) {
+  ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+  }
+}
+.dropdown-menu {
+  padding: 0px;
+  margin: 2px 0 0;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 0;
+  -webkit-box-shadow: 0 2px 4px rgba(134, 134, 134, 0);
+  box-shadow: 0 2px 4px rgba(134, 134, 134, 0);
+  border: 1px solid #d6d6d6;
+  border-top: none;
+}
+.dropdown-menu .dropdown-menu {
+  left: 100%;
+  top: -2px;
+}
+.dropdown-menu > li > a {
+  padding: 10px 20px;
+  color: #4c4c4c;
+  border-top: 1px solid #f1f1f1;
+}
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+  color: #fff;
+  background-color: rgba(119, 95, 117, 0.5);
+}
+.nav .open > a {
+  background-color: rgba(119, 95, 117, 0.5);
+  border-color: rgba(119, 95, 117, 0.5);
+}
+.nav .open > a:focus, .nav .open > a:hover {
+  background-color: rgba(119, 95, 117, 0.5);
+  border-color: rgba(119, 95, 117, 0.5);
+}
+/*.nav .home-svg-link{*/
+.home-svg-link {
+  text-indent: -9999px;
+  /*margin-right:2em;*/
+  /*margin-right: 37em;*/
+  display: block;
+  width: 50%;
+  height: 100px;
+}
+.home-svg-link a {
+  display: block;
+  width: 50%;
+  height: 100px;
+  background-image: url(/wp-content/themes/serenti/svg/PalmaSettimiLogo_new.svg);
+  background-size: 90px 82px;
+  background-repeat: no-repeat;
+}
+/*.navbar .navbar-nav .home-svg-link, .navbar .navbar-nav .home-svg-link a{*/
+/*.navbar .navbar-nav .home-svg-link a{*/
+.navbar .navbar-nav .home-svg-link a:hover {
+  background-image: url(/wp-content/themes/serenti/svg/PalmaSettimiLogo_new.svg);
+}
+/*--------------------------------------------------------------
+ Theme navigation
+ --------------------------------------------------------------*/
+/*- post navigation -*/
+.post-navigation, .posts-navigation {
+  padding: 0 0 30px 0;
+}
+.post-navigation .nav-links, .posts-navigation .nav-links {
+  color: #313131;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+}
+.post-navigation .nav-links .nav-previous, .posts-navigation .nav-links .nav-previous {
+  width: 50%;
+  float: left;
+  padding-right: 15px;
+}
+.post-navigation .nav-links .nav-next {
+  width: 50%;
+  float: left;
+  text-align: right;
+  padding-left: 15px;
+}
+.posts-navigation .nav-links .nav-next {
+  width: 50%;
+  float: left;
+  text-align: right;
+  padding-left: 15px;
+}
+.posts-navigation a {
+  font-family: "open sans", sans-serif;
+  border: 1px solid #e6e6ea;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  padding: 12px 28px !important;
+  display: inline-block;
+  margin-top: 10px;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  border-radius: 50px !important;
+  line-height: 100%;
+}
+.posts-navigation a:hover {
+  color: #fff;
+  border: 1px solid;
+  background-color: #d0c5c1;
+  border-color: #d0c5c1;
+}

@@ -355,11 +355,6 @@ final class NF_Display_Render
     		$json_obj = array( "fields" => $fields, "form_settings" => $form->get_settings() );
 
     		return $json_obj;
-
-    		//return wp_json_encode( $json_obj );
-    		//return json_encode( $json_obj, JSON_UNESCAPED_SLASHES );
-
-    		//return "clowns defecate for fun with " . $form_id;
 	}
 
 	function restlocalize($data){

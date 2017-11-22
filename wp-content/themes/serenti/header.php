@@ -8,9 +8,9 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
-		<meta charset="<?php bloginfo('charset'); ?>">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<meta charset="<?php bloginfo('charset'); ?>" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<?php wp_head(); ?>
 		<script src="https://use.fontawesome.com/22c47afbf3.js"></script>
 	</head>
@@ -29,11 +29,11 @@
 					</button> 
 				</div>
 				<!--<nav class="navbar top right" role="navigation">-->
-					<?php wp_nav_menu( array( 'theme_location' => "top-menu" ) ); ?>
+					<?php //wp_nav_menu( array( 'theme_location' => "top-menu", 'menu_class' => "menu container" ) ); ?>
 				<!--</nav>-->
 
 				
-				<?php serenti_header_menu(); // main navigation ?>
+				<?php serenti_header_menu( array( 'menu_class' => "menu container" ) ); // main navigation ?>
 			</div>
 		</nav>
 		<!-- End: Navigation -->

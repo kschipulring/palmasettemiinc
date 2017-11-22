@@ -164,7 +164,7 @@ if ( ! function_exists( 'serenti_header_menu' ) ) :
 /*
  * Header menu (should you choose to use one)
  */
-function serenti_header_menu() {
+function serenti_header_menu($paramArr=array()) {
 
 	$serenti_menu_center = get_theme_mod( 'serenti_menu_center' );
 
@@ -174,7 +174,7 @@ function serenti_header_menu() {
 		$serenti_add_center_class = " navbar-center";
 	}
 
-	wp_nav_menu(array(
+	$defaultArr = array(
 		'theme_location'    => 'primary',
 		'depth'             => 3,
 		'container'         => 'div',
@@ -182,7 +182,21 @@ function serenti_header_menu() {
 		'menu_class'        => 'nav navbar-nav',
 		'fallback_cb'       => 'serenti_bootstrap_navwalker::fallback',
 		'walker'            => new serenti_bootstrap_navwalker()
-	));
+	);
+
+	//$finalParamArr = array_merge($defaultArr, $paramArr);
+
+	$finalParamArr = array();
+
+	foreach( $defaultArr as $key=>$val ){
+		if( array_key_exists ($key, $paramArr ) && $paramArr[$key] !== null ){
+			$finalParamArr[$key] = $paramArr[$key];
+		}else{
+			$finalParamArr[$key] = $defaultArr[$key];
+		}
+	}
+
+	wp_nav_menu( $finalParamArr );
 } /* end header menu */
 endif;
 
@@ -255,7 +269,7 @@ function serenti_scripts() {
 
 	// Add JS Files
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri().'/js/bootstrap.min.js', array('jquery') );
-	wp_enqueue_script( 'serenti-js', get_template_directory_uri().'/js/serenti.js', array('jquery') );
+	wp_enqueue_script( 'serenti-js', get_template_directory_uri().'/js/bundle.js', array('jquery') );
 
 	// Threaded comments
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
