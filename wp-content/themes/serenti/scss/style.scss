@@ -30,6 +30,8 @@ hover color:	#d0c5c1 (coffe latte color)
 @include font-face('proxima_nova_altbold', 'Mark Simonson - Proxima Nova Alt Bold-webfont');
 @include font-face('Proxima Nova', 'Mark Simonson - Proxima Nova Alt Regular-webfont');
 
+@include font-face('proxima_nova_altconsemibold', 'Mark Simonson - Proxima Nova Alt Condensed Semibold-webfont');
+
 @include font-face('proxima_nova_scosfthin', 'Mark Simonson - Proxima Nova ScOsf Thin-webfont');
 @include font-face('proxima_nova_ltsemibold', 'Mark Simonson - Proxima Nova Semibold-webfont');
 @include font-face('proxima_nova_ltthin', 'Mark Simonson - Proxima Nova Thin-webfont');
@@ -44,6 +46,7 @@ html{
 
 body{
 	font-size: 15px;
+	color: dimgrey;
 }
 
 body, p {
@@ -75,10 +78,13 @@ p {
 	font-weight: 400;
 	letter-spacing: 0px;
 	font-size: 17px;
-	color: #131313;
 	line-height: 161%;
 	-webkit-font-smoothing: antialiased;
 	margin-bottom: 25px;
+
+	a {
+		border-bottom: rgba(17, 17, 17, 0.2) solid 1px;
+	}
 }
 
 * > p {

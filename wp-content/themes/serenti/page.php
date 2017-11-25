@@ -5,10 +5,15 @@
  * @package serenti
  */
 
-get_header(); ?>
+get_header();
+
+if ( empty($page_class) ) {
+	$page_class = "default";
+}
+?>
 
 	<section class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main <?php echo $page_class; ?>" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -27,6 +32,6 @@ get_header(); ?>
 	</section>
 
 <?php
-get_sidebar();
+//get_sidebar();
 
 get_footer();

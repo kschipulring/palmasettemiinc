@@ -115,7 +115,6 @@ button {
   cursor: pointer;
   -webkit-appearance: button;
   display: inline-block;
-  margin-top: 20px;
   border: 1px solid;
   border-color: #e6e6ea;
   padding: 5px 20px;
@@ -202,4 +201,55 @@ input {
 
 .password-form {
   text-align: center;
+}
+
+.form-search{
+	margin-bottom: 100px;
+}
+
+.nf-form-content{
+	margin-top:30px;
+
+	.nf-field-label{
+		label{
+			font-weight:normal;
+		}
+		
+		.ninja-forms-req-symbol{
+			color: black;
+		}
+	}
+
+	.nf-field{
+		input.ninja-forms-field{
+			padding:12px;
+			border: 1px rgb(204, 204, 204) solid;
+			background-color: rgb(250, 250, 250);
+		}
+	}
+
+	textarea{
+		background-color: rgb(250, 250, 250);
+	}
+
+	input[type='button'].ninja-forms-field{
+		color: #fff;
+		background-color: #272727;
+		border-color: #272727;
+		font-family: $font-heading-link;
+		font-weight: 300;
+		font-style: normal;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		border-radius: 0;
+		display: inline-block;
+		width: auto;
+		height: auto;
+		padding: 1em 2.5em;
+		border-width: 0;
+		text-align: center;
+		cursor: pointer;
+		outline: none;
+		font-size:1em;
+	}
 }
