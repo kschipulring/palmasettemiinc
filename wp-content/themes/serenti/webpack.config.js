@@ -4,11 +4,30 @@ var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
 var webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+//const compiler = webpack(config);
 
 var extractPlugin = new ExtractTextPlugin({
 	filename: '../style.css',
 	publicPath: './'
 });
+
+
+/*
+//so we can use the app object or whatever for the friendly plugin below
+var express = require("express");
+
+var app = express();
+
+var FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+
+app.use(require('webpack-dev-middleware')(compiler, {
+	quiet: true,
+	publicPath: path.resolve(__dirname, 'js')
+	//publicPath: config.output.publicPath,
+}));
+
+*/
+
 
 module.exports = {
 	entry: './js/serenti.js',
@@ -49,7 +68,8 @@ module.exports = {
 		]
 	},
 	plugins: [
-		extractPlugin
+		extractPlugin,
+		//new FriendlyErrorsWebpackPlugin()
 	]
 	//watch: true
 };

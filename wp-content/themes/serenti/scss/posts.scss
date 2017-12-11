@@ -332,3 +332,20 @@ main.home .post-header{
     }
   }
 }
+
+.map-table{
+	tr{
+		td{
+			padding: 0.5em;
+
+			p{
+				padding:0px;
+				margin:0px;
+			}
+
+			br{
+				display:none;
+			}
+		}
+	}
+}

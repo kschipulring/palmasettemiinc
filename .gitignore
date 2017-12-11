@@ -1,2 +1,5 @@
 # node modules in serenti theme
 wp-content/themes/serenti/node_modules/
+wp-content/themes/serenti/style.css
+wp-content/themes/serenti/js/bundle.js
+readme.zip

@@ -217,29 +217,41 @@ function serenti_fonts_url() {
 	$subsets   = 'latin,latin-ext';
 
 	/* translators: If there are characters in your language that are not supported by Dancing Script, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Dancing Script: on or off', 'serenti' ) ) {
+	/*if ( 'off' !== _x( 'on', 'Dancing Script: on or off', 'serenti' ) ) {
 		$fonts[] = 'Dancing Script:400';
-	}
+	}*/
 
 	/* translators: If there are characters in your language that are not supported by Crimson Text, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Libre Baskerville font: on or off', 'serenti' ) ) {
+	/*if ( 'off' !== _x( 'on', 'Libre Baskerville font: on or off', 'serenti' ) ) {
 		$fonts[] = 'Libre Baskerville:400,400italic';
-	}
+	}*/
 
 	/* translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Karma font: on or off', 'serenti' ) ) {
+	/*if ( 'off' !== _x( 'on', 'Karma font: on or off', 'serenti' ) ) {
 		$fonts[] = 'Karma:400,700';
-	}
+	}*/
 
 	/* translators: If there are characters in your language that are not supported by Noto Sans, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'serenti' ) ) {
+	/*if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'serenti' ) ) {
 		$fonts[] = 'Open Sans:500';
-	}
+	}*/
 
 	/* translators: If there are characters in your language that are not supported by Playfair Display, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Karla font: on or off', 'serenti' ) ) {
+	/*if ( 'off' !== _x( 'on', 'Karla font: on or off', 'serenti' ) ) {
 		$fonts[] = 'Karla:400,400italic,700,700italic';
-	}
+	}*/
+
+	/*
+	//old
+	http://fonts.googleapis.com/css?family=Dancing+Script%3A400%7CLibre+Baskerville%3A400%2C400italic%7CKarma%3A400%2C700%7COpen+Sans%3A500%7CKarla%3A400%2C400italic%2C700%2C700italic&subset=latin%2Clatin-ext
+	*/
+
+	//https://fonts.googleapis.com/css?directory=3&family=Proxima+Nova:400,600,700,800|Montserrat:400,700|Lora:400,400i,700,700i&subset=latin,latin-ext&text=+,.-_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnoprstuvwyz1234567890
+
+	$fonts[] = 'Lora:400,400i,700,700i';
+	$fonts[] = 'Montserrat:400,700';
+	//$fonts[] = 'Proxima+Nova:400,600,700,800';
+	$fonts[] = 'Proxima+Nova';
 
 	if ( $fonts ) {
 		$fonts_url = add_query_arg( array(
@@ -268,7 +280,7 @@ function serenti_scripts() {
 	wp_enqueue_style( 'serenti-style', get_stylesheet_uri() );
 
 	// Add JS Files
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri().'/js/bootstrap.min.js', array('jquery') );
+	//wp_enqueue_script( 'bootstrap', get_template_directory_uri().'/js/bootstrap.min.js', array('jquery') );
 	wp_enqueue_script( 'serenti-js', get_template_directory_uri().'/js/bundle.js', array('jquery') );
 
 	// Threaded comments

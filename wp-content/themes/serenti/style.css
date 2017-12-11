@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat);@charset "UTF-8";
+@charset "UTF-8";
 /*
 Theme Name: Serenti
 Theme URI: http://www.moozthemes.com/serenti-wordpress-theme
@@ -35,64 +35,39 @@ EXAMPLE:
 
 */
 @font-face {
-  font-family: "AvenirLTStd-Heavy";
-  src: url("/wp-content/themes/serenti/fonts/AvenirLTStd-Heavy.eot");
-  src: url("/wp-content/themes/serenti/fonts/AvenirLTStd-Heavy.eot?#iefix") format("embedded-opentype"), url("/wp-content/themes/serenti/fonts/AvenirLTStd-Heavy.woff") format("woff"), url("/wp-content/themes/serenti/fonts/AvenirLTStd-Heavy.ttf") format("truetype"), url("/wp-content/themes/serenti/fonts/AvenirLTStd-Heavy.svg#AvenirLTStd-Heavy") format("svg"); }
-
-@font-face {
-  font-family: "AvenirLTStd-Book";
-  src: url("/wp-content/themes/serenti/fonts/AvenirLTStd-Book.eot");
-  src: url("/wp-content/themes/serenti/fonts/AvenirLTStd-Book.eot?#iefix") format("embedded-opentype"), url("/wp-content/themes/serenti/fonts/AvenirLTStd-Book.woff") format("woff"), url("/wp-content/themes/serenti/fonts/AvenirLTStd-Book.ttf") format("truetype"), url("/wp-content/themes/serenti/fonts/AvenirLTStd-Book.svg#AvenirLTStd-Book") format("svg"); }
-
-@font-face {
-  font-family: "AvenirLTStd-Medium";
-  src: url("/wp-content/themes/serenti/fonts/AvenirLTStd-Medium.eot");
-  src: url("/wp-content/themes/serenti/fonts/AvenirLTStd-Medium.eot?#iefix") format("embedded-opentype"), url("/wp-content/themes/serenti/fonts/AvenirLTStd-Medium.woff") format("woff"), url("/wp-content/themes/serenti/fonts/AvenirLTStd-Medium.ttf") format("truetype"), url("/wp-content/themes/serenti/fonts/AvenirLTStd-Medium.svg#AvenirLTStd-Medium") format("svg"); }
-
-@font-face {
-  font-family: "AvenirLTStd-Light";
-  src: url("/wp-content/themes/serenti/fonts/AvenirLTStd-Light.eot");
-  src: url("/wp-content/themes/serenti/fonts/AvenirLTStd-Light.eot?#iefix") format("embedded-opentype"), url("/wp-content/themes/serenti/fonts/AvenirLTStd-Light.woff") format("woff"), url("/wp-content/themes/serenti/fonts/AvenirLTStd-Light.ttf") format("truetype"), url("/wp-content/themes/serenti/fonts/AvenirLTStd-Light.svg#AvenirLTStd-Light") format("svg"); }
-
-@font-face {
   font-family: "proxima_nova_altblack";
-  src: url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.eot");
-  src: url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.eot?#iefix") format("embedded-opentype"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.woff") format("woff"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.ttf") format("truetype"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.svg#proxima_nova_altblack") format("svg"); }
+  src: url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.eot");
+  src: url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.eot?#iefix") format("embedded-opentype"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.woff") format("woff"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.ttf") format("truetype"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.svg#proxima_nova_altblack") format("svg"); }
 
 @font-face {
   font-family: "proxima_nova_altbold";
-  src: url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.eot");
-  src: url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.eot?#iefix") format("embedded-opentype"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.woff") format("woff"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.ttf") format("truetype"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.svg#proxima_nova_altbold") format("svg"); }
+  src: url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.eot");
+  src: url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.eot?#iefix") format("embedded-opentype"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.woff") format("woff"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.ttf") format("truetype"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.svg#proxima_nova_altbold") format("svg"); }
 
 @font-face {
   font-family: "Proxima Nova";
-  src: url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.eot");
-  src: url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.eot?#iefix") format("embedded-opentype"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.woff") format("woff"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.ttf") format("truetype"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.svg#Proxima Nova") format("svg"); }
+  src: url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.eot");
+  src: url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.eot?#iefix") format("embedded-opentype"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.woff") format("woff"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.ttf") format("truetype"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.svg#Proxima Nova") format("svg"); }
 
 @font-face {
   font-family: "proxima_nova_altconsemibold";
-  src: url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Condensed Semibold-webfont.eot");
-  src: url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Condensed Semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Condensed Semibold-webfont.woff") format("woff"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Condensed Semibold-webfont.ttf") format("truetype"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Condensed Semibold-webfont.svg#proxima_nova_altconsemibold") format("svg"); }
+  src: url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Condensed Semibold-webfont.eot");
+  src: url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Condensed Semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Condensed Semibold-webfont.woff") format("woff"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Condensed Semibold-webfont.ttf") format("truetype"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Alt Condensed Semibold-webfont.svg#proxima_nova_altconsemibold") format("svg"); }
 
 @font-face {
   font-family: "proxima_nova_scosfthin";
-  src: url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova ScOsf Thin-webfont.eot");
-  src: url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova ScOsf Thin-webfont.eot?#iefix") format("embedded-opentype"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova ScOsf Thin-webfont.woff") format("woff"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova ScOsf Thin-webfont.ttf") format("truetype"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova ScOsf Thin-webfont.svg#proxima_nova_scosfthin") format("svg"); }
+  src: url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova ScOsf Thin-webfont.eot");
+  src: url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova ScOsf Thin-webfont.eot?#iefix") format("embedded-opentype"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova ScOsf Thin-webfont.woff") format("woff"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova ScOsf Thin-webfont.ttf") format("truetype"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova ScOsf Thin-webfont.svg#proxima_nova_scosfthin") format("svg"); }
 
 @font-face {
   font-family: "proxima_nova_ltsemibold";
-  src: url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Semibold-webfont.eot");
-  src: url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Semibold-webfont.woff") format("woff"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Semibold-webfont.ttf") format("truetype"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Semibold-webfont.svg#proxima_nova_ltsemibold") format("svg"); }
+  src: url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Semibold-webfont.eot");
+  src: url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Semibold-webfont.woff") format("woff"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Semibold-webfont.ttf") format("truetype"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Semibold-webfont.svg#proxima_nova_ltsemibold") format("svg"); }
 
 @font-face {
   font-family: "proxima_nova_ltthin";
-  src: url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Thin-webfont.eot");
-  src: url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Thin-webfont.eot?#iefix") format("embedded-opentype"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Thin-webfont.woff") format("woff"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Thin-webfont.ttf") format("truetype"), url("/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Thin-webfont.svg#proxima_nova_ltthin") format("svg"); }
-
-@font-face {
-  font-family: "loraregular";
-  src: url("/wp-content/themes/serenti/fonts/lora-regular-webfont.eot");
-  src: url("/wp-content/themes/serenti/fonts/lora-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/wp-content/themes/serenti/fonts/lora-regular-webfont.woff") format("woff"), url("/wp-content/themes/serenti/fonts/lora-regular-webfont.ttf") format("truetype"), url("/wp-content/themes/serenti/fonts/lora-regular-webfont.svg#loraregular") format("svg"); }
+  src: url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Thin-webfont.eot");
+  src: url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Thin-webfont.eot?#iefix") format("embedded-opentype"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Thin-webfont.woff") format("woff"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Thin-webfont.ttf") format("truetype"), url("/wp/wp-content/themes/serenti/fonts/Mark Simonson - Proxima Nova Thin-webfont.svg#proxima_nova_ltthin") format("svg"); }
 
 html {
   font-size: 100%; }
@@ -369,7 +344,8 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     width: 50%;
     height: 100px;
-    background-image: url(/wp-content/themes/serenti/svg/PalmaSettimiLogo_new.svg);
+    /*background-image: url(/wp-content/themes/serenti/svg/PalmaSettimiLogo_new.svg);*/
+    background-image: url(./svg/PalmaSettimiLogo_new.svg);
     background-size: 90px 82px;
     background-repeat: no-repeat; }
   @media (min-width: 38em) {
@@ -377,10 +353,7 @@ h1, h2, h3, h4, h5, h6 {
       width: 20%; } }
   @media (min-width: 75em) {
     .home-svg-link {
-      width: 50%; } }
-
-.navbar .navbar-nav .home-svg-link a:hover {
-  background-image: url(/wp-content/themes/serenti/svg/PalmaSettimiLogo_new.svg); }
+      width: 30%; } }
 
 /*--------------------------------------------------------------
 	Theme navigation
@@ -898,6 +871,14 @@ main.home .post-header {
     font-size: 9px; }
     .post-share .socials a i {
       font-size: 14px; } }
+
+.map-table tr td {
+  padding: 0.5em; }
+  .map-table tr td p {
+    padding: 0px;
+    margin: 0px; }
+  .map-table tr td br {
+    display: none; }
 
 /*--------------------------------------------------------------
 	Comments

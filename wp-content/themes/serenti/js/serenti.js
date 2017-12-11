@@ -1,3 +1,9 @@
+import './jquery.rwdImageMaps.min.js';
+
+import './bootstrap.min.js';
+//import './dev/bootstrap.js';
+
+//master scss file
 import '../scss/style.scss';
 
 jQuery(function($) {
@@ -23,5 +29,11 @@ jQuery(function($) {
 		}, 800);
 		return false;
 	});
+
+	$('img[usemap]').rwdImageMaps();
+	
+	/*$('area').on('click', function() {
+		alert($(this).attr('alt') + ' clicked');
+	});*/
 
 });

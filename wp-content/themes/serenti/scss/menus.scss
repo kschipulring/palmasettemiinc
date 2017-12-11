@@ -223,6 +223,7 @@
 		width: 50%;
 		height: 100px;
 		background-image: url(/wp-content/themes/serenti/svg/PalmaSettimiLogo_new.svg);
+		/*background-image: url(./svg/PalmaSettimiLogo_new.svg);*/
 		background-size: 90px 82px;
 		background-repeat: no-repeat;
 	}
@@ -232,13 +233,10 @@
 	}
 
 	@include for-desktop-up{
-		width: 50%;
+		width: 30%;
 	}
 }
 
-.navbar .navbar-nav .home-svg-link a:hover {
-  background-image: url(/wp-content/themes/serenti/svg/PalmaSettimiLogo_new.svg);
-}
 
 /*--------------------------------------------------------------
 	Theme navigation

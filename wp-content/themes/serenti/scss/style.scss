@@ -21,10 +21,6 @@ hover color:	#d0c5c1 (coffe latte color)
 @import "_functions-mixins";
 @import "_variables";
 
-@include font-face('AvenirLTStd-Heavy', 'AvenirLTStd-Heavy');
-@include font-face('AvenirLTStd-Book', 'AvenirLTStd-Book');
-@include font-face('AvenirLTStd-Medium', 'AvenirLTStd-Medium');
-@include font-face('AvenirLTStd-Light', 'AvenirLTStd-Light');
 
 @include font-face('proxima_nova_altblack', 'Mark Simonson - Proxima Nova Alt Black-webfont');
 @include font-face('proxima_nova_altbold', 'Mark Simonson - Proxima Nova Alt Bold-webfont');
@@ -36,9 +32,7 @@ hover color:	#d0c5c1 (coffe latte color)
 @include font-face('proxima_nova_ltsemibold', 'Mark Simonson - Proxima Nova Semibold-webfont');
 @include font-face('proxima_nova_ltthin', 'Mark Simonson - Proxima Nova Thin-webfont');
 
-@include font-face('loraregular', 'lora-regular-webfont');
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 html{
 	font-size: 100%;
