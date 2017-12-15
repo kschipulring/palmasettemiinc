@@ -4,7 +4,7 @@ import './bootstrap.min.js';
 //import './dev/bootstrap.js';
 
 //master scss file
-import '../scss/style.scss';
+import '../../scss/style.scss';
 
 jQuery(function($) {
 	"use strict";

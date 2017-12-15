@@ -215,6 +215,7 @@ function serenti_fonts_url() {
 	$fonts_url = '';
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
+	//$subsets   = 'all';
 
 	/* translators: If there are characters in your language that are not supported by Dancing Script, translate this to 'off'. Do not translate into your own language. */
 	/*if ( 'off' !== _x( 'on', 'Dancing Script: on or off', 'serenti' ) ) {
@@ -251,11 +252,13 @@ function serenti_fonts_url() {
 	$fonts[] = 'Lora:400,400i,700,700i';
 	$fonts[] = 'Montserrat:400,700';
 	//$fonts[] = 'Proxima+Nova:400,600,700,800';
-	$fonts[] = 'Proxima+Nova';
+	//$fonts[] = 'Proxima+Nova';
+	$fonts[] = 'Muli';
 
 	if ( $fonts ) {
 		$fonts_url = add_query_arg( array(
 			'family' => urlencode( implode( '|', $fonts ) ),
+			//'family' => implode( '|', $fonts ),
 			'subset' => urlencode( $subsets ),
 		), '//fonts.googleapis.com/css' );
 	}
