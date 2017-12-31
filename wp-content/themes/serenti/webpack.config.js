@@ -23,17 +23,6 @@ var fs = require('fs');
 //post processing
 var LastCallWebpackPlugin = require('last-call-webpack-plugin');
 
-//css nano
-var cssnano = require('cssnano')({
-            preset: ['default', {
-                discardComments: {
-                    removeAll: true,
-                },
-                "discardComments": {"removeAll": true},
-            }]
-        });
-
-
 //csso
 var csso = require('csso');
 
@@ -85,10 +74,8 @@ var lastCaller = new LastCallWebpackPlugin({
 
 			//create a new version of the css content with a more absolute path.
 			var cssContentCorrected = asset.source().replace( re, "../.." );
-			//var cssContentCorrected = asset.source();
 
 			//final write to the master css file.  If this is production, then do the css nano thing, aka, super minify
-			//return isProd === true ? cssnano.process(cssContentCorrected).then( r => fs.writeFile(cssOutFinalPath, ".vomitingKermit{}", function(){console.log("in the ghetto")}) ) : Promise.resolve( cssContentCorrected );
 			return isProd === true ? Promise.resolve( csso.minify( cssContentCorrected ).css ) : Promise.resolve( cssContentCorrected );
 		}
 	}],
@@ -98,14 +85,12 @@ var lastCaller = new LastCallWebpackPlugin({
 		var outStr = 'Finished processing assets.';
 
 		if(err){
-			outStr = 'Error: ', err;
+			outStr = 'Error: ', err, "; error details: \n";
 
 			for(var i in err ){
-				console.log("i = ", i, " , err["+i+"] = ", err[i]);
+				outStr += " , err["+i+"] = ", err[i];
 			}
 		}
-
-		//console.log(err ? 'Error: ' + err : 'Finished processing assets.')
 
 		console.log(outStr);
 	},
