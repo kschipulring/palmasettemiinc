@@ -1,7 +1,10 @@
 # node modules in serenti theme
+wp-content/themes/serenti/dist/
 wp-content/themes/serenti/node_modules/
+wp-content/themes/serenti/tmp/
 wp-content/themes/serenti/style.css
 wp-content/themes/serenti/style.dist.css
+wp-content/themes/serenti/style.prefinal.css
 wp-content/themes/serenti/js/bundle.js
 wp-content/endurance-page-cache/
 readme.zip

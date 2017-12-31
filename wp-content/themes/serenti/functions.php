@@ -57,7 +57,7 @@ function serenti_setup() {
 	// Set the content width based on the theme's design and stylesheet.
 	global $content_width;
 	if ( ! isset( $content_width ) ) {
-	$content_width = 1140; /* pixels */
+		$content_width = 1140; /* pixels */
 	} 
 
 	/*
@@ -217,36 +217,6 @@ function serenti_fonts_url() {
 	$subsets   = 'latin,latin-ext';
 	//$subsets   = 'all';
 
-	/* translators: If there are characters in your language that are not supported by Dancing Script, translate this to 'off'. Do not translate into your own language. */
-	/*if ( 'off' !== _x( 'on', 'Dancing Script: on or off', 'serenti' ) ) {
-		$fonts[] = 'Dancing Script:400';
-	}*/
-
-	/* translators: If there are characters in your language that are not supported by Crimson Text, translate this to 'off'. Do not translate into your own language. */
-	/*if ( 'off' !== _x( 'on', 'Libre Baskerville font: on or off', 'serenti' ) ) {
-		$fonts[] = 'Libre Baskerville:400,400italic';
-	}*/
-
-	/* translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language. */
-	/*if ( 'off' !== _x( 'on', 'Karma font: on or off', 'serenti' ) ) {
-		$fonts[] = 'Karma:400,700';
-	}*/
-
-	/* translators: If there are characters in your language that are not supported by Noto Sans, translate this to 'off'. Do not translate into your own language. */
-	/*if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'serenti' ) ) {
-		$fonts[] = 'Open Sans:500';
-	}*/
-
-	/* translators: If there are characters in your language that are not supported by Playfair Display, translate this to 'off'. Do not translate into your own language. */
-	/*if ( 'off' !== _x( 'on', 'Karla font: on or off', 'serenti' ) ) {
-		$fonts[] = 'Karla:400,400italic,700,700italic';
-	}*/
-
-	/*
-	//old
-	http://fonts.googleapis.com/css?family=Dancing+Script%3A400%7CLibre+Baskerville%3A400%2C400italic%7CKarma%3A400%2C700%7COpen+Sans%3A500%7CKarla%3A400%2C400italic%2C700%2C700italic&subset=latin%2Clatin-ext
-	*/
-
 	//https://fonts.googleapis.com/css?directory=3&family=Proxima+Nova:400,600,700,800|Montserrat:400,700|Lora:400,400i,700,700i&subset=latin,latin-ext&text=+,.-_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnoprstuvwyz1234567890
 
 	$fonts[] = 'Lora:400,400i,700,700i';
@@ -276,19 +246,21 @@ function serenti_scripts() {
 	wp_enqueue_style( 'serenti-webfonts', serenti_fonts_url(), array(), null, null );
 
 	// Add Bootstrap default CSS
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.min.css' );
+	//wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/src/css/bootstrap.min.css' );
+	//wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/src/css/font-awesome.min.css' );
 
 	// Add main theme stylesheet
-	wp_enqueue_style( 'serenti-style', get_stylesheet_uri() );
+	//wp_enqueue_style( 'serenti-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'serenti-style', get_template_directory_uri() . '/dist/css/style.dist.css' );
 
 	// Add JS Files
 	//wp_enqueue_script( 'bootstrap', get_template_directory_uri().'/js/bootstrap.min.js', array('jquery') );
-	wp_enqueue_script( 'serenti-js', get_template_directory_uri().'/js/bundle.js', array('jquery') );
+	//wp_enqueue_script( 'serenti-js', get_template_directory_uri().'/dist/js/bundle.js', array('jquery') );
+	wp_enqueue_script( 'serenti-js', get_template_directory_uri().'/dist/js/bundle.js' );
 
 	// Threaded comments
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-	wp_enqueue_script( 'comment-reply' );
+		wp_enqueue_script( 'comment-reply' );
 	}
 
 }
@@ -304,33 +276,34 @@ if (!function_exists('serenti_custom_css_output'))  {
 		$serenti_links_color = get_theme_mod( 'serenti_links_color' );
 		$serenti_hover_color = get_theme_mod( 'serenti_hover_color' );
 
-		echo '<style type="text/css" id="serenti-custom-theme-css">';
+		$outStr = '<style type="text/css" id="serenti-custom-theme-css">';
 
 		if ( $serenti_accent_color != "") {
-			echo '.widget-title span { box-shadow: ' . esc_attr($serenti_accent_color) . ' 0 -4px 0 inset;}';
+			$outStr .= '.widget-title span { box-shadow: ' . esc_attr($serenti_accent_color) . ' 0 -4px 0 inset;}';
 		}
 
 		if ( $serenti_links_color != "") {
-			echo 'a, .page-title { color: ' . esc_attr($serenti_links_color) . '; }' .
+			$outStr .= 'a, .page-title { color: ' . esc_attr($serenti_links_color) . '; }' .
 			'::selection { background-color: ' . esc_attr($serenti_links_color) . '; }' .
 			'.section-title h2:after { background-color: ' . esc_attr($serenti_links_color) . '; }' .
 			'.page-numbers .current, .widget_search button { background-color: ' . esc_attr($serenti_links_color) . '; border-color: ' . esc_attr($serenti_links_color) . '; }';
 		}
 		if ( $serenti_hover_color != "" ) {
-			echo 'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background-color: ' . esc_attr($serenti_hover_color) . '; border-color: ' . esc_attr($serenti_hover_color) . '; }' .
+			$outStr .= 'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background-color: ' . esc_attr($serenti_hover_color) . '; border-color: ' . esc_attr($serenti_hover_color) . '; }' .
 			'.comment-reply-link:hover, .comment-reply-login:hover, .page-numbers li a:hover { background-color: ' . esc_attr($serenti_hover_color) . '; border-color: ' . esc_attr($serenti_hover_color) . '; }' .
 			'.post-share a:hover, .post-header span a:hover, .post-meta .meta-info a:hover { border-color: ' . esc_attr($serenti_hover_color) . '; }' .
 			'a:hover, a:focus, a:active, a.active, .mz-social-widget a:hover { color: ' . esc_attr($serenti_hover_color) . '; }';
 		}
 		if ( $serenti_buttons_hover_color != "" ) {
-			echo '.read-more a:hover, .null-instagram-feed p a:hover { background-color: ' . esc_attr($serenti_buttons_hover_color) . '; border-color: ' . esc_attr($serenti_buttons_hover_color) . '; }' .
+			$outStr .= '.read-more a:hover, .null-instagram-feed p a:hover { background-color: ' . esc_attr($serenti_buttons_hover_color) . '; border-color: ' . esc_attr($serenti_buttons_hover_color) . '; }' .
 			'.posts-navigation a:hover { background-color: ' . esc_attr($serenti_buttons_hover_color) . '; border-color: ' . esc_attr($serenti_buttons_hover_color) . '; }' .
 			'.nav>li>a:focus, .nav>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover { background-color: ' . esc_attr($serenti_buttons_hover_color) . '; }' .
 			'#back-top a:hover { background-color: ' . esc_attr($serenti_buttons_hover_color) . '; }';
 		}
 
-		echo '</style>';
+		$outStr .= '</style>';
 
+		echo $outStr;
 	}
 }
 add_action( 'wp_head', 'serenti_custom_css_output');
