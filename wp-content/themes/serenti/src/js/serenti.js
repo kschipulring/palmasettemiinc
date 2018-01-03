@@ -17,7 +17,7 @@ console.log(output);
 
 console.log("ape horse");*/
 
-import '../css/font-awesome.min.css';
+//import '../css/font-awesome.min.css';
 import '../css/bootstrap.min.css';
 
 //master scss file
