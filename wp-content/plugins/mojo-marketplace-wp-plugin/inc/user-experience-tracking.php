@@ -81,6 +81,51 @@ function mm_ux_log( $args = array() ) {
 add_action( 'admin_footer', 'mm_ux_log', 9 );
 add_action( 'customize_controls_print_footer_scripts', 'mm_ux_log' );
 
+function mm_clm_log( $name, $properties = array() ) {
+	global $mm_clm_events;
+
+	$refresh_token = get_option( '_mm_refresh_token' );
+	if ( mm_brand() === 'bluehost' && false != $refresh_token ) {
+		$clm_endpoint = 'https://my.bluehost.com/api/events';
+		$path_hash = mm_site_bin2hex();
+		$domain = parse_url( get_option( 'siteurl' ), PHP_URL_HOST );
+
+		$refresh_token = get_option( '_mm_refresh_token' );
+
+		$package = new stdClass();
+		$package->domain = $domain;
+		$package->site_id = $path_hash;
+		$package->event_name = $name;
+		$package->event_properties = (object) $properties;
+		$package->event_properties->site_id = $path_hash;
+		$package->event_properties->domain = get_option( 'siteurl' );
+
+		$headers = array(
+			'x-api-refresh-token' => $refresh_token,
+			'x-api-path' => $path_hash,
+		);
+		$args = array(
+			'timeout'     => 1,
+			'blocking'    => false,
+			'headers'     => $headers,
+			'body'        => json_encode( $package ),
+		);
+
+		if ( ! isset( $mm_clm_events ) || is_null( $mm_clm_events ) ) {
+			$mm_clm_events = array();
+		}
+
+		$key = md5( $name . json_encode( $properties ) );
+
+		if ( ! in_array( $key, $mm_clm_events ) && false === get_transient( 'mm_' . $key, false ) ) {
+			$mm_clm_events[] = $key;
+			set_transient( 'mm_' . $key, 'true', 600 );
+			$response = wp_remote_post( $clm_endpoint, $args );
+		}
+	}
+	return;
+}
+
 function mm_ux_log_start() {
 	$session = array(
 		'sc' => 'start',
@@ -273,6 +318,44 @@ function mm_ux_log_current_theme() {
 }
 add_action( 'admin_footer-index.php', 'mm_ux_log_current_theme' );
 
+function mm_ux_log_theme_change( $new_option, $old_option ) {
+	$event = array(
+		't'     => 'event',
+		'ec'    => 'user_action',
+		'ea'    => 'theme_change',
+		'el'    => $new_option,
+	);
+	mm_ux_log( $event );
+	$data = array(
+		'old_theme'   => $old_option,
+		'new_theme'   => $new_option,
+	);
+	return $new_option;
+}
+add_filter( 'pre_update_option_stylesheet', 'mm_ux_log_theme_change', 10, 2 );
+
+function mm_ux_log_plugin_activated( $plugin, $network_wide ) {
+	$event = array(
+		't'     => 'event',
+		'ec'    => 'user_action',
+		'ea'    => 'plugin_activated',
+		'el'    => $plugin,
+	);
+	mm_ux_log( $event );
+}
+add_action( 'activated_plugin', 'mm_ux_log_plugin_activated', 10, 2 );
+
+function mm_ux_log_plugin_deactivated( $plugin, $network_wide ) {
+	$event = array(
+		't'     => 'event',
+		'ec'    => 'user_action',
+		'ea'    => 'plugin_activated',
+		'el'    => $plugin,
+	);
+	mm_ux_log( $event );
+}
+add_action( 'deactivated_plugin', 'mm_ux_log_plugin_deactivated', 10, 2 );
+
 function mm_ux_log_scheduled_events_weekly() {
 	$events = get_option( 'mm_cron', array( 'weekly' => array() ) );
 	if ( isset( $events['weekly'] ) && count( $events['weekly'] ) >= 1 ) {
@@ -392,6 +475,8 @@ function mm_ux_log_content_status( $new_status, $old_status, $post ) {
 			'el'    => $new_status,
 		);
 		mm_ux_log( $event );
+
+		mm_clm_log( 'content_' . $new_status, $post );
 	}
 	//first post is 3 because of the example post and page.
 	if ( 3 == $post->ID ) {
@@ -533,7 +618,7 @@ function mm_jetpack_log_connected( $entry ) {
 add_action( 'jetpack_log_entry', 'mm_jetpack_log_connected', 10, 1 );
 
 function mm_ux_site_launched( $new_option, $old_option ) {
-	if ( $old_option != $new_option && 'true' == $new_option ) {
+	if ( $old_option != $new_option && 'false' == $new_option ) {
 		$install_time = strtotime( get_option( 'mm_install_date', date( 'M d, Y' ) ) );
 		$event = array(
 			't'     => 'event',
@@ -542,12 +627,21 @@ function mm_ux_site_launched( $new_option, $old_option ) {
 			'el'    => time() - $install_time,
 		);
 		mm_ux_log( $event );
+		$post_count = wp_count_posts( 'post' );
+		$page_count = wp_count_posts( 'page' );
+		$data = array(
+			'theme'        => get_option( 'stylesheet' ),
+			'post_count'   => $post_count->publish,
+			'page_count'   => $page_count->publish,
+			'plugin_count' => count( get_option( 'active_plugins', array() ) ),
+		);
+		mm_clm_log( 'site_launched', $data );
 	}
 	return $new_option;
 }
 add_filter( 'pre_update_option_mm_coming_soon', 'mm_ux_site_launched', 10, 2 );
 
-function mm_ux_auto_core_upgrade() {
+function mm_ux_auto_core_upgrade( $new_option, $old_option ) {
 	global $wp_version;
 	$event = array(
 		't'     => 'event',
@@ -556,10 +650,11 @@ function mm_ux_auto_core_upgrade() {
 		'el'    => $wp_version,
 	);
 	mm_ux_log( $event );
+	return $new_option;
 }
-add_action( 'pre_update_option_auto_updater.lock', 'mm_ux_auto_core_upgrade' );
+add_action( 'pre_update_option_auto_updater.lock', 'mm_ux_auto_core_upgrade', 10, 2 );
 
-function mm_sso_success() {
+function mm_sso_success( $user = null, $page = null ) {
 	$event = array(
 		't'     => 'event',
 		'ec'    => 'user_action',
@@ -567,8 +662,25 @@ function mm_sso_success() {
 		'el'    => 'success',
 	);
 	mm_ux_log( $event );
+	$data = array(
+		'landing_page'  => $page,
+		'user_nicename' => $user->user_nicename,
+		'user_id'       => $user->ID,
+	);
+	mm_clm_log( 'wp_sso', $data );
 }
 add_action( 'mmsso_success', 'mm_sso_success' );
+
+function mm_sso_fail() {
+	$event = array(
+		't'     => 'event',
+		'ec'    => 'user_action',
+		'ea'    => 'sso',
+		'el'    => 'fail',
+	);
+	mm_ux_log( $event );
+}
+add_action( 'mmsso_fail', 'mm_sso_fail' );
 
 function mm_staging_event( $command ) {
 	$event = array(
@@ -581,13 +693,35 @@ function mm_staging_event( $command ) {
 }
 add_action( 'mm_staging_command', 'mm_staging_event' );
 
-function mm_sso_fail() {
+function mm_jpo_step_skipped( $step ) {
 	$event = array(
 		't'     => 'event',
 		'ec'    => 'user_action',
-		'ea'    => 'sso',
-		'el'    => 'fail',
+		'ea'    => 'jetpack_onboarding_skipped',
+		'el'    => $step,
 	);
 	mm_ux_log( $event );
 }
-add_action( 'mmsso_fail', 'mm_sso_fail' );
+add_action( 'jpo_step_skipped', 'mm_jpo_step_skipped' );
+
+function mm_jpo_step_complete( $step, $data ) {
+	$event = array(
+		't'     => 'event',
+		'ec'    => 'user_action',
+		'ea'    => 'jetpack_onboarding_completed',
+		'el'    => $step,
+	);
+	mm_ux_log( $event );
+}
+add_action( 'jpo_step_complete', 'mm_jpo_step_complete' );
+
+function mm_jpo_started( $type ) {
+	$event = array(
+		't'     => 'event',
+		'ec'    => 'user_action',
+		'ea'    => 'jetpack_onboarding_started',
+		'el'    => $type,
+	);
+	mm_ux_log( $event );
+}
+add_action( 'jpo_started', 'mm_jpo_started' );

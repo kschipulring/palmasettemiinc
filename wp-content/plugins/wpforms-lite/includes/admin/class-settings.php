@@ -55,7 +55,7 @@ class WPForms_Settings {
 			add_action( 'wpforms_admin_settings_after',  array( $this, 'captcha_addon_notice' ) );
 			add_action( 'wpforms_admin_page',            array( $this, 'output'               ) );
 
-			// Hook for add-ons.
+			// Hook for addons.
 			do_action( 'wpforms_settings_init' );
 		}
 	}
@@ -139,7 +139,7 @@ class WPForms_Settings {
 		// Save settings.
 		update_option( 'wpforms_settings', $settings );
 
-		WPForms_Admin_Notice::success( __( 'Settings saved.', 'wpforms' ) );
+		WPForms_Admin_Notice::success( __( 'Settings were successfully saved.', 'wpforms' ) );
 	}
 
 	/**
@@ -149,7 +149,7 @@ class WPForms_Settings {
 	 */
 	public function enqueues() {
 
-		// Hook for add-ons.
+		// Hook for addons.
 		do_action( 'wpforms_settings_enqueue' );
 	}
 
@@ -221,18 +221,18 @@ class WPForms_Settings {
 	 */
 	public function get_registered_settings( $view = '' ) {
 
-		// reCAPTCAH heading description is long so we define it seperately.
+		// reCAPTCAH heading description is long so we define it separately.
 		$recaptcha_desc  = '<p>' . __( 'reCAPTCHA is a free anti-spam service from Google which helps to protect your website from spam and abuse while letting real people pass through with ease.', 'wpforms' ) . '</p>';
 		$recaptcha_desc .= '<p>' . __( 'Google\'s original <a href="https://www.google.com/recaptcha/intro/" target="_blank" rel="noopener noreferrer">v2 reCAPTCHA</a> prompts users to check a box to prove they\'re human, whereas <a href="https://www.google.com/recaptcha/intro/invisible.html" target="_blank" rel="noopener noreferrer">Invisible reCAPTCHA</a> uses advanced technology to detect real users without requiring any input.', 'wpforms' ) . '</p>';
 		$recaptcha_desc .= '<p>' . __( 'Sites already using v2 reCAPTCHA will need to create new site keys before switching to the Invisible reCAPTCHA.', 'wpforms' ) . '</p>';
-		$recaptcha_desc .= '<p>' . __( '<a href="https://wpforms.com/docs/setup-captcha-wpforms/" rel="noopener noreferrer" target="_blank">Read our walk through</a> to learn more and for step-by-step directions.', 'wpforms' ) . '</p>';
+		$recaptcha_desc .= '<p>' . sprintf( __( '<a href="%s" rel="noopener noreferrer" target="_blank">Read our walk through</a> to learn more and for step-by-step directions.', 'wpforms' ), 'https://wpforms.com/docs/setup-captcha-wpforms/' ) . '</p>';
 
 		$defaults = array(
 			// General Settings tab.
 			'general' => array(
 				'license-heading' => array(
 					'id'       => 'license-heading',
-					'content'  => '<h4>' . __( 'License', 'wpforms' ) . '</h4><p>' . __( 'Your license key provides access to updates and Add-ons', 'wpforms' ) . '</p>',
+					'content'  => '<h4>' . __( 'License', 'wpforms' ) . '</h4><p>' . __( 'Your license key provides access to updates and addons.', 'wpforms' ) . '</p>',
 					'type'     => 'content',
 					'no_label' => true,
 					'class'    => array( 'section-heading' ),
@@ -266,6 +266,12 @@ class WPForms_Settings {
 					'id'      => 'global-assets',
 					'name'    => __( 'Load Assets Globally', 'wpforms' ),
 					'desc'    => __( 'Check this if you would like to load WPForms assets site-wide. Only check if your site is having compatibility issues or instructed to by support.', 'wpforms' ),
+					'type'    => 'checkbox',
+				),
+				'hide-announcements' => array(
+					'id'      => 'hide-announcements',
+					'name'    => __( 'Hide Announcements', 'wpforms' ),
+					'desc'    => __( 'Check this if you would like to hide plugin announcements and update details.', 'wpforms' ),
 					'type'    => 'checkbox',
 				),
 			),
@@ -496,7 +502,7 @@ class WPForms_Settings {
 			<p>
 				<?php _e( 'WPForms custom captcha addon allows you to add custom questions captcha or math questions captcha to your WordPress forms. Since we know spam is a huge problem for contact forms, WPForms goes above and beyond to help you protect your forms.', 'wpforms' ); ?>
 				<br><br>
-				<a href="<?php echo wpforms_admin_upgrade_link(); ?>" class="wpforms-btn wpforms-btn-md wpforms-btn-orange" target="_blank" rel="noopener noreferrer"><?php _e( 'Click here to Upgrade', 'wpforms' ); ?></a>
+				<a href="<?php echo wpforms_admin_upgrade_link(); ?>" class="wpforms-btn wpforms-btn-md wpforms-btn-orange wpforms-upgrade-modal" target="_blank" rel="noopener noreferrer"><?php _e( 'Click here to Upgrade', 'wpforms' ); ?></a>
 			</p>
 		</div>
 		<?php

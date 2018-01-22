@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width">
 <title><?php echo get_option( 'blogname' ); ?> &mdash; Coming Soon</title>
 <?php echo mm_cs_meta(); ?>
 <style type='text/css'>
 body{
-	background-color: #2D2A25;
+	background-color: #fff;
 	background-image: url( <?php echo MM_BASE_URL . 'images/cs-bluehost-bg.jpg'; ?> );
 	background-position: top right;
 	background-repeat: no-repeat;
@@ -117,7 +118,7 @@ footer p a:hover{
 		</div>
 	</div>
 	<footer>
-			<p class='text-center'>a <a href='https://bluehost.com/wordpress' class='bluehost'>bluehost</a> powered website</p>
+			<p class='text-center'>a <a href='https://bluehost.com/wordpress' class='bluehost' rel='nofollow'>bluehost</a> powered website</p>
 	</footer>
 </body>
 </html>
