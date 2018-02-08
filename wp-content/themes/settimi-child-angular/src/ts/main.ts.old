@@ -1,0 +1,78 @@
+/*
+//angular stuff
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';
+import { AppModule } from './app/app.module';
+*/
+
+//import jQuery from 'jquery';
+//import * as $ from "jquery";
+
+declare var require;
+require(["jquery"], function($:JQueryStatic) {
+    $('body').append('<b>Hello JQuery AMD!</b>');
+});
+
+
+/*
+import jQueryFactory = require('jquery');
+const jQuery = jQueryFactory(window, true);*/
+
+//used for the map page.  Responsively sized image maps.
+//import '../js/jquery.rwdImageMaps.min.js';
+//const responsiveImageMap = require('@yuheiy/responsive-image-map');
+//import responsiveImageMap from '@yuheiy/responsive-image-map';
+
+/*import responsiveImageMapFactory = require('@yuheiy/responsive-image-map');
+const responsiveImageMap = responsiveImageMapFactory(window, true);*/
+
+import '../js/bootstrap.min.js';
+//import '../js/bootstrap.js';
+
+//third party css files.  These go first, because our styles are sometimes modifications on top of these definitions
+//import '../css/font-awesome.min.css';
+import '../css/bootstrap.min.css';
+
+//master scss file
+import '../scss/style.scss';
+
+/*$(document).ready(function(){
+	//console.log("niggers run in space");
+});*/
+
+//platformBrowserDynamic().bootstrapModule(AppModule);
+/*
+jQuery(function($) {
+	"use strict";
+
+	// hide #back-top first
+	$("#back-top").hide();
+
+	// fade in #back-top
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 100) {
+			$('#back-top').fadeIn();
+		} else {
+			$('#back-top').fadeOut();
+		}
+	});
+
+	// scroll body to 0px on click
+	$('#back-top a').on("click", function(){
+		$('body,html').animate({
+			scrollTop: 0
+		}, 800);
+		return false;
+	});
+
+	//
+	//$('img[usemap]').rwdImageMaps();
+	/*for (var img of document.querySelectorAll('img[usemap]')) {
+		responsiveImageMap(img);
+	}*/
+	
+	/*$('area').on('click', function() {
+		alert($(this).attr('alt') + ' clicked');
+	});*/
+
+//});

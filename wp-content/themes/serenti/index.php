@@ -30,8 +30,8 @@
 	// Previous/next page navigation.
 	the_posts_pagination( array(
 		'type'          => 'list',
-		'prev_text'          => __( 'Previous page', 'serenti' ),
-		'next_text'          => __( 'Next page', 'serenti' )
+		'prev_text'          => __( 'Previous page', 'settimi' ),
+		'next_text'          => __( 'Next page', 'settimi' )
 	) );
 
 

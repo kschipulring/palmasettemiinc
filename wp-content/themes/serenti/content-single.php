@@ -2,7 +2,7 @@
 /**
  * The template used for displaying content single
  *
- * @package serenti
+ * @package settimi
  */
 ?>
 						<article  id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -10,13 +10,13 @@
 							<div class="post-image">
 								<?php if ( has_post_thumbnail() ) : 
 
-										$serenti_thumb_size = get_theme_mod( 'serenti_sidebar_position' );
-										if ((isset($serenti_thumb_size)) && ($serenti_thumb_size == 'mz-full-width')) $serenti_thumbnail = 'serenti-large-thumbnail';
-										else $serenti_thumbnail = 'serenti-middle-thumbnail';
+										$settimi_thumb_size = get_theme_mod( 'settimi_sidebar_position' );
+										if ((isset($settimi_thumb_size)) && ($settimi_thumb_size == 'mz-full-width')) $settimi_thumbnail = 'settimi-large-thumbnail';
+										else $settimi_thumbnail = 'settimi-middle-thumbnail';
 
 									?>
 									<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-									<?php the_post_thumbnail( $serenti_thumbnail ); ?>
+									<?php the_post_thumbnail( $settimi_thumbnail ); ?>
 									</a>
 								<?php endif; ?>
 							</div>
@@ -32,7 +32,7 @@
 										edit_post_link(
 											sprintf(
 												/* translators: %s: Name of current post */
-												esc_html__( 'Edit %s', 'serenti' ),
+												esc_html__( 'Edit %s', 'settimi' ),
 												the_title( '<span class="screen-reader-text">"', '"</span>', false )
 											),
 											'<span class="edit-link">',
@@ -46,11 +46,11 @@
 								<?php the_content(); ?>
 								<?php			
 								wp_link_pages( array(
-									'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'serenti' ) . '</span>',
+									'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'settimi' ) . '</span>',
 									'after'       => '</div>',
 									'link_before' => '<span>',
 									'link_after'  => '</span>',
-									'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'serenti' ) . ' </span>%',
+									'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'settimi' ) . ' </span>%',
 									'separator'   => '<span class="screen-reader-text">, </span>',
 								) );
 								?>

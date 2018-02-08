@@ -1,10 +1,10 @@
 /*
-Theme Name: Shopstar
+Theme Name: Shopstar!
 Theme URI: http://www.outtheboxthemes.com/themes/shopstar/
 Author: Out the Box
 Author URI: http://www.outtheboxthemes.com/
 Description: Shopstar! is a super stylish, fully responsive, easy to use WordPress theme perfect for an online store, fashion website or blog. Its minimalist design features let your products and visuals do the talking. Integrated with powerful plugins like SiteOrigin's Page Builder and Contact Form 7, as well as being Woocommerce-ready - it's easily customisable and ready to go. Download it today and get your customers shopping up a storm!
-Version: 1.0.23
+Version: 1.0.28
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: shopstar
@@ -13,7 +13,7 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, cus
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Shopstar is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Shopstar! is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -33,9 +33,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 6.0 Accessibility
 7.0 Alignments
 8.0 Clearings
-	8.1 Shopstar Univeral Styling
-	8.2 Shopstar Content Layout Styling
-	8.3 Shopstar Theme Styling
+	8.1 Shopstar! Univeral Styling
+	8.2 Shopstar! Content Layout Styling
+	8.3 Shopstar! Theme Styling
 9.0 Widgets
 10.0 Content
     10.1 Posts and pages
@@ -781,7 +781,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-8.1 Shopstar Universal Styling
+8.1 Shopstar! Universal Styling
 --------------------------------------------------------------*/
 
 .clearboth {
@@ -799,7 +799,7 @@ ul.no-bullets {
 
 
 /*--------------------------------------------------------------
-8.2 Shopstar Content Layout Styling
+8.2 Shopstar! Content Layout Styling
 --------------------------------------------------------------*/
 
 .container {
@@ -861,7 +861,7 @@ body.full-width .widget-area {
 
 
 /*--------------------------------------------------------------
-8.3 Shopstar Theme Styling
+8.3 Shopstar! Theme Styling
 --------------------------------------------------------------*/
 
 body {
@@ -1556,8 +1556,11 @@ article .entry-meta {
 article .entry-meta a {
 	text-decoration: none;
 }
+article .cat-links {
+    margin: 0 10px 0 0;
+}
 article .tags-links {
-    margin: 0 0 0 10px;
+    margin: 0;
 }
 article .comments-link {
     display: block;

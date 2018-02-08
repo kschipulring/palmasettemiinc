@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package serenti
+ * @package settimi
  */
 
 /**
@@ -14,7 +14,7 @@
  * @param string $size The size of the image to return.
  * @return bool|string False on failure, image URL on success.
  */
-function serenti_get_image_src( $image_id, $size = 'full' ) {
+function settimi_get_image_src( $image_id, $size = 'full' ) {
 	$img_attr = wp_get_attachment_image_src( intval( $image_id ), $size );
 	if ( ! empty( $img_attr[0] ) ) {
 		return $img_attr[0];
@@ -24,8 +24,8 @@ function serenti_get_image_src( $image_id, $size = 'full' ) {
 /*
  * Add boostrap classes fot tables
  */
-add_filter( 'the_content', 'serenti_add_custom_table_class' );
+add_filter( 'the_content', 'settimi_add_custom_table_class' );
 
-function serenti_add_custom_table_class( $content ) {
+function settimi_add_custom_table_class( $content ) {
 	return str_replace( '<table>', '<table class="table table-hover">', $content );
 }

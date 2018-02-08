@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package serenti
+ * @package settimi
  */
 ?>
 
@@ -23,7 +23,7 @@
 				<!-- Brand and toggle get grouped for better mobile display --> 
 				<div class="navbar-header"> 
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> 
-						<span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'serenti' ); ?></span> 
+						<span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'settimi' ); ?></span> 
 						<span class="icon-bar"></span> 
 						<span class="icon-bar"></span> 
 						<span class="icon-bar"></span>
@@ -34,7 +34,7 @@
 				<!--</nav>-->
 
 				
-				<?php serenti_header_menu( array( 'menu_class' => "menu container" ) ); // main navigation ?>
+				<?php settimi_header_menu( array( 'menu_class' => "menu container" ) ); // main navigation ?>
 			</div>
 		</nav>
 		<!-- End: Navigation -->
@@ -43,7 +43,7 @@
 		<div class="container">
 			<header class="header" id="header">
 				<div class="container">
-					<?php serenti_the_custom_logo(); ?>
+					<?php settimi_the_custom_logo(); ?>
 				</div>
 			</header>
 		</div>
@@ -55,7 +55,7 @@
 					$layout_class = get_post_meta($post->ID, 'site_layout', true);
 				}
 				else{
-					$layout_class = get_theme_mod( 'serenti_sidebar_position' );
+					$layout_class = get_theme_mod( 'settimi_sidebar_position' );
 				}
 				if ((isset($layout_class)) && ($layout_class == '')) $layout_class = "mz-sidebar-right";
 			?>
@@ -65,4 +65,4 @@
 
 			<div id="content">
 				<div class="row">
-					<div class="<?php echo esc_attr(serenti_content_bootstrap_classes()); ?>">
+					<div class="<?php echo esc_attr(settimi_content_bootstrap_classes()); ?>">

@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package serenti
+ * @package settimi
  */
 
 get_header(); ?>
@@ -14,7 +14,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php the_post_navigation( array( 'next_text' => __( '<span class="meta-nav">Next Post</span> %title', 'serenti' ), 'prev_text' => __( '<span class="meta-nav">Previous Post</span> %title', 'serenti' ) ) ); ?>
+			<?php the_post_navigation( array( 'next_text' => __( '<span class="meta-nav">Next Post</span> %title', 'settimi' ), 'prev_text' => __( '<span class="meta-nav">Previous Post</span> %title', 'settimi' ) ) ); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

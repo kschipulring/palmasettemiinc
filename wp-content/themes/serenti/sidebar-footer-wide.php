@@ -2,7 +2,7 @@
 /**
  * The Sidebar widget area for footer.
  *
- * @package serenti
+ * @package settimi
  */
 ?>
 

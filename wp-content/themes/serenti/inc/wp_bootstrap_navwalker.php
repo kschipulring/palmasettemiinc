@@ -10,7 +10,7 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
-class serenti_bootstrap_navwalker extends Walker_Nav_Menu {
+class settimi_bootstrap_navwalker extends Walker_Nav_Menu {
 
         /**
          * @see Walker::start_lvl()
@@ -193,7 +193,7 @@ class serenti_bootstrap_navwalker extends Walker_Nav_Menu {
                                 $fb_output .= ' class="' . $menu_class . '"';
 
                         $fb_output .= '>';
-                        $fb_output .= '<li><a href="' . esc_url(admin_url( 'nav-menus.php' )) . '">' . __( 'Add a menu', 'serenti' ) . '</a></li>';
+                        $fb_output .= '<li><a href="' . esc_url(admin_url( 'nav-menus.php' )) . '">' . __( 'Add a menu', 'settimi' ) . '</a></li>';
                         $fb_output .= '</ul>';
 
                         if ( $container )

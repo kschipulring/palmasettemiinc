@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying search forms in serenti
+ * The template for displaying search forms in settimi
  *
- * @package serenti
+ * @package settimi
  */
 /*
 Template Name: Home Page

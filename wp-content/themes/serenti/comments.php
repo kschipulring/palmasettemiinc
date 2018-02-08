@@ -4,7 +4,7 @@
  *
  * The area of the page that contains comments and the comment form.
  *
- * @package serenti
+ * @package settimi
  */
 
 /*
@@ -21,14 +21,14 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 
 	<h2 class="comments-title">
-		<?php printf ( esc_html__('Only %1$s registered %2$s users can comment.','serenti'), '<a href="'.esc_url( wp_login_url( get_permalink() ) ).'">', '</a>' ); ?>
+		<?php printf ( esc_html__('Only %1$s registered %2$s users can comment.','settimi'), '<a href="'.esc_url( wp_login_url( get_permalink() ) ).'">', '</a>' ); ?>
 	</h2>
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 	<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'serenti' ); ?></h1>
-		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'serenti' ) ); ?></div>
-		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'serenti' ) ); ?></div>
+		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'settimi' ); ?></h1>
+		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'settimi' ) ); ?></div>
+		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'settimi' ) ); ?></div>
 	</nav><!-- #comment-nav-above -->
 	<?php endif; // Check for comment navigation. ?>
 
@@ -44,14 +44,14 @@ if ( post_password_required() ) {
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 	<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'serenti' ); ?></h1>
-		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'serenti' ) ); ?></div>
-		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'serenti' ) ); ?></div>
+		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'settimi' ); ?></h1>
+		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'settimi' ) ); ?></div>
+		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'settimi' ) ); ?></div>
 	</nav><!-- #comment-nav-below -->
 	<?php endif; // Check for comment navigation. ?>
 
 	<?php if ( ! comments_open() ) : ?>
-	<p class="no-comments"><?php _e( 'Comments are closed.', 'serenti' ); ?></p>
+	<p class="no-comments"><?php _e( 'Comments are closed.', 'settimi' ); ?></p>
 	<?php endif; ?>
 
 	<?php endif; // have_comments() ?>

@@ -1,27 +1,27 @@
 ﻿== ABOUT THEME == 
 
-Theme Name : Serenti
+Theme Name : SettimiClown
 Version    : 1.0.5
-Theme URL  : http://www.moozthemes.com/serenti-wordpress-theme/
-Theme Documentation  : http://www.moozthemes.com/serenti-wordpress-theme-documentation/
+Theme URL  : http://www.google.com
+Theme Documentation  : http://www.yahoo.com
 
 Author: MOOZ Themes
-Author URL: https://moozthemes.com/
+Author URL: https://www.google.com
 
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
 == COPYRIGHT AND LICENSE == 
 
-Serenti WordPress Theme, Copyright 2017 MOOZ Themes
-Serenti is distributed under the terms of the GNU GPL
+Settimi WordPress Theme, Copyright 2017 MOOZ Themes
+Settimi is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-serenti WordPress Theme bundles the following third-party resources:
+settimi WordPress Theme bundles the following third-party resources:
 
 * FontAwesome.
   FontAwesome 4.2.0

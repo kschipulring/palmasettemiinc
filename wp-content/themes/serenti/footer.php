@@ -2,7 +2,7 @@
 /**
  * The template used for displaying content single
  *
- * @package serenti
+ * @package settimi
  */
 ?>
 
@@ -37,7 +37,7 @@
 			</div>
 
 			<div class="footer-bottom">
-				<?php do_action('serenti_footer'); ?>
+				<?php do_action('settimi_footer'); ?>
 			</div>
 		</footer>
 

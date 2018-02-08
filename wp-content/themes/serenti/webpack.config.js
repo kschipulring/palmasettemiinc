@@ -1,3 +1,5 @@
+'use strict';
+
 //webpack.config.js
 var path = require('path');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
@@ -26,20 +28,26 @@ var LastCallWebpackPlugin = require('last-call-webpack-plugin');
 //csso
 var csso = require('csso');
 
+const CssoWebpackPlugin = require('csso-webpack-plugin').default;
+
+
 //source folders where the development css and js come from
 var srcDir = "./src/";
 var srcCSSdir = srcDir + "css/";
+//var srcCSSdir = srcDir;
 var srcJSdir = srcDir + "js/";
+var srcTSdir = srcDir + "ts/";
 
 //dist folders where the rendered css and js files go
 var distDir = "./dist/";
 //const distCSSdir = distDir + "css/";
-var distCSSdir = "/css/";
+//var distCSSdir = "/css/";
+var distCSSdir = "../";
 var distJSdir = distDir + "js/";
 
 
 //part of the hack to have a correct relative path css final file, alone with relative paths
-const cssOutFinalName = "style.dist.css";
+const cssOutFinalName = "style.css";
 
 //includes the folder with the file name
 const cssOutFinalPath = distCSSdir + cssOutFinalName;
@@ -73,12 +81,14 @@ var lastCaller = new LastCallWebpackPlugin({
 			var re = new RegExp(pattern, "g");
 
 			//create a new version of the css content with a more absolute path.
-			var cssContentCorrected = asset.source().replace( re, "../.." );
+			//var cssContentCorrected = asset.source().replace( re, "../.." );
+			var cssContentCorrected = asset.source();
 
 			//final write to the master css file.  If this is production, then do the css nano thing, aka, super minify
-			return isProd === true ? Promise.resolve( csso.minify( cssContentCorrected ).css ) : Promise.resolve( cssContentCorrected );
+			return Promise.resolve( cssContentCorrected );
 		}
-	}],
+	},
+	],
 	onStart: () => console.log('Starting to process assets.'),
 	//onEnd: (err) => console.log(err ? 'Error: ' + err : 'Finished processing assets.'),
 	onEnd: function(err) {
@@ -99,16 +109,21 @@ var lastCaller = new LastCallWebpackPlugin({
 
 
 //webpack plugin list.  These defaults are always present for this wp theme
-var pluginOptions = [lastCaller, extractPlugin];
+//var pluginOptions = [lastCaller, extractPlugin];
+var pluginOptions = [extractPlugin];
 
 //'isProd' itself is used below for determining whether or not uglifyJs should be called, based on whether or not it is production mode.
 if( isProd === true ){
 	pluginOptions.push( new UglifyJsPlugin() );
+	pluginOptions.push( new CssoWebpackPlugin() );
 }
 
 //where webpack does its thing
 var moduleExporter = module.exports = {
-	entry: srcJSdir + 'serenti.js',
+	entry: {
+		mainjs: srcJSdir + 'main.js',
+		//maints: srcTSdir + 'main.ts'
+	},
 	output: {
 		path: path.resolve(__dirname, distJSdir),
 		filename: 'bundle.js'
@@ -135,7 +150,14 @@ var moduleExporter = module.exports = {
 				],
 				'exclude': [/node_modules/, nodeModulesPath]
 			},
-			
+			{
+				test: /\.tsx?$/,
+				use: [
+					{
+						loader: 'ts-loader'
+					}
+				]
+			},
 			{
 				test: /\.css$/,
 				exclude: /node_modules/,

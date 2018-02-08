@@ -1,5 +1,4 @@
-//file handling
-const fs = require('fs');
+
 
 //not really needed, wordpress just insists on putting jquery in, mostly thanks to third party plugins.
 //import jQuery from 'jquery';
@@ -10,12 +9,8 @@ import './jquery.rwdImageMaps.min.js';
 import './bootstrap.min.js';
 //import './dev/bootstrap.js';
 
-/*
-var output = fs.readFileSync('../css/font-awesome.min.css');
-
-console.log(output);
-
-console.log("ape horse");*/
+//css imports.  we have to do things wierdly here.
+import '../css/wp-theme-settings.css';
 
 //import '../css/font-awesome.min.css';
 import '../css/bootstrap.min.css';
@@ -53,5 +48,4 @@ jQuery(function($) {
 	/*$('area').on('click', function() {
 		alert($(this).attr('alt') + ' clicked');
 	});*/
-
 });

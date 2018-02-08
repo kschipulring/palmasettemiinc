@@ -18,7 +18,7 @@ function shopstar_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'shopstar' ); ?></h1>
+		<span class="screen-reader-text"><?php _e( 'Posts navigation', 'shopstar' ); ?></span>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
@@ -49,7 +49,7 @@ function shopstar_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'shopstar' ); ?></h1>
+		<span class="screen-reader-text"><?php _e( 'Post navigation', 'shopstar' ); ?></span>
 		<div class="nav-links">
 			<?php
 			$slider_categories 	= get_theme_mod( 'shopstar-slider-categories', '' );

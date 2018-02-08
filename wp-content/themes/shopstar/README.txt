@@ -1,8 +1,8 @@
-=== Shopstar ===
+=== Shopstar! ===
 Contributors: Out the Box
 Donate link: 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment, photography, portfolio
-Tested up to: 4.8.1
+Tested up to: 4.9.1
 Stable tag: 3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,8 +13,8 @@ Shopstar! is a super stylish, fully responsive, easy to use WordPress theme perf
 
 == License ==
 
-Shopstar WordPress Theme, Copyright 2016 Out the Box.
-Shopstar is distributed under the terms of the GNU GPL.
+Shopstar! WordPress Theme, Copyright 2016 Out the Box.
+Shopstar! is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
@@ -92,6 +92,25 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1100 wide and 420 high.
 
 == Changelog ==
+
+#### 1.0.28
+* Updated page and post comments to honor the "Allow comments" setting
+* Added styling for the Yotpo Reviews for Woocommerce plugin
+* Fixed some WooCommerce styling issues
+
+#### 1.0.27
+* Fixed a styling issue on the single blog post page where tags were preceded with a gap if no categories were present
+* Changed various Screen Reader Text elements from an H1 to a span
+* Fixed some WooCommerce styling issues
+
+#### 1.0.26
+* Removed the previous update to force word breaks if text is too long to fit on one line 
+
+#### 1.0.25
+* Fixed a bug with the last update where words were breaking unnecessarily
+
+#### 1.0.24
+* Updated the stylesheet to force word breaks if text is too long to fit on one line
 
 #### 1.0.23
 * Fixed a glitch with the styling of tel input fields

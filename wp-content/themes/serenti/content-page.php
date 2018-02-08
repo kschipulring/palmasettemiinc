@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package serenti
+ * @package settimi
  */
 ?>
 
@@ -10,7 +10,7 @@
 	<div class="post-image">
 	<?php if ( has_post_thumbnail() ) : ?>
 		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-		<?php the_post_thumbnail( 'serenti-thumbnail' ); ?>
+		<?php the_post_thumbnail( 'settimi-thumbnail' ); ?>
 		</a>
 	<?php endif; ?></div>
 	<div class="blog-post-body">
@@ -25,7 +25,7 @@
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'serenti' ),
+					esc_html__( 'Edit %s', 'settimi' ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				),
 				'<span class="edit-link">',
@@ -38,11 +38,11 @@
 			<?php the_content(); ?>
 			<?php			
 			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'serenti' ) . '</span>',
+				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'settimi' ) . '</span>',
 				'after'       => '</div>',
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
-				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'serenti' ) . ' </span>%',
+				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'settimi' ) . ' </span>%',
 				'separator'   => '<span class="screen-reader-text">, </span>',
 			) );
 			?>

@@ -2,7 +2,7 @@
 /**
  * The template for displaying pages.
  *
- * @package serenti
+ * @package settimi
  */
 
 get_header();
@@ -11,6 +11,12 @@ if ( empty($page_class) ) {
 	$page_class = "default";
 }
 ?>
+fuck you
+	<app-root>
+		<app-component>Your mom loves sodomy</app-component>
+	</app-root>
+	
+murdarmachene
 
 	<section class="content-area">
 		<main id="main" class="site-main <?php echo $page_class; ?>" role="main">

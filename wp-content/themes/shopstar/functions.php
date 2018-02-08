@@ -6,7 +6,7 @@
  *
  * @package shopstar
  */
-define( 'SHOPSTAR_THEME_VERSION' , '1.0.23' );
+define( 'SHOPSTAR_THEME_VERSION' , '1.0.28' );
 
 if ( ! function_exists( 'shopstar_setup' ) ) :
 /**

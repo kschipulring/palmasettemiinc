@@ -186,6 +186,10 @@ main.home .post-header{
 
 .home .post-entry p, .ot-widget-about-author .author-post p {
   font-size: 15px;
+
+  &:empty{
+  	display:none;
+  }
 }
 
 .post-entry {

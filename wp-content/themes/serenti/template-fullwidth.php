@@ -4,11 +4,11 @@
  *
  * This is the template that displays full width page without sidebar
  *
- * @package serenti
+ * @package settimi
  */
 
-$serenti_page_comments = get_theme_mod( 'serenti_page_comments' );
-$serenti_page_comments = isset($serenti_page_comments) ? $serenti_page_comments : '';
+$settimi_page_comments = get_theme_mod( 'settimi_page_comments' );
+$settimi_page_comments = isset($settimi_page_comments) ? $settimi_page_comments : '';
 
 get_header(); ?>
 
@@ -22,7 +22,7 @@ get_header(); ?>
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template
-					if ( $serenti_page_comments == 1 ) :
+					if ( $settimi_page_comments == 1 ) :
 					if ( comments_open() || '0' != get_comments_number() ) :
 					comments_template();
 					endif;

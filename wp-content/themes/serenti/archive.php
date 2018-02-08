@@ -2,7 +2,7 @@
 /**
  * The template for displaying Archive pages.
  *
- * @package serenti
+ * @package settimi
  */
 
 get_header(); ?>
